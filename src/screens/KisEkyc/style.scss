@@ -1,0 +1,123 @@
+.Ekyc {
+  background: white;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  color: black;
+  .NextButton {
+    position: absolute;
+    right: 50px;
+    color: #fff !important;
+    background-color: #005eac !important;
+    border-color: #005eac !important;
+  }
+  .BackButton {
+    position: absolute;
+    right: 158px;
+    color: #161a26 !important;
+    background-color: #efeff4 !important;
+    border-color: #efeff4 !important;
+  }
+  ._2Jtxm._35Ago ._2kL0S {
+    background-color: #005eac !important;
+    color: white;
+  }
+  .Crossbar {
+    height: 6px;
+    display: flex;
+    margin-top: 0;
+    .CrossbarLeft {
+      flex: 2;
+      background-color: #622e00;
+    }
+    .CrossbarRight {
+      flex: 3;
+      background-color: #669bd1;
+    }
+  }
+  .LogoSection {
+    max-width: 400px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    .Logo {
+      height: 100%;
+      background-repeat: no-repeat;
+      background-image: url('../../assets/images/logo_kis.png');
+      background-size: contain;
+      margin-left: 50px;
+      margin-top: 7px;
+    }
+  }
+  .btn-primary {
+    color: #fff !important;
+    background-color: #005eac !important;
+    border-color: #005eac !important;
+  }
+}
+.SelectInvestor,
+.SDK,
+.CheckInfo,
+.ServiceInfo,
+.OTP {
+  .ButtonWrapper {
+    display: none;
+  }
+}
+.ErrorMessage {
+  margin: auto;
+  position: relative;
+  top: -29px;
+  max-width: 660px;
+  font-style: italic;
+  color: red;
+}
+
+@media only screen and (max-width: 750px) {
+  ._53Ji7 {
+    padding: 5px !important;
+  }
+}
+
+// Animation
+
+@keyframes backInRight {
+  0% {
+    transform: translateX(2000px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

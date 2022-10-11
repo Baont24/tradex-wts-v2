@@ -1,0 +1,175 @@
+@import 'styles/variables.scss';
+
+.PutThroughBoard {
+  padding: 0 5px 5px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  > .TotalSection {
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 20px;
+  }
+
+  > .BoardSection {
+    height: 100%;
+    display: flex;
+    max-height: calc(100% - 35px);
+    > .SubBoard {
+      background: var(--color-dark__title-module);
+      border-radius: 3px;
+      margin: 0 5px;
+      overflow: auto;
+      position: relative;
+      height: fit-content;
+      max-height: 100%;
+      &.Ask,
+      &.Bid {
+        flex: 2;
+      }
+
+      &.Matched {
+        flex: 3;
+      }
+
+      > .Title {
+        height: $height-row;
+        border-bottom: 1px solid $color-dark__separator;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        background: var(--color-dark__title-module);
+        > span {
+          position: relative;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          &::before {
+            content: '';
+            height: 3px;
+            width: 100%;
+            background-color: var(--color-yellow-logo-light);
+            position: absolute;
+            bottom: 0;
+            border-radius: 3px 3px 0px 0px;
+          }
+        }
+      }
+
+      > .PutThroughTable {
+        display: flex;
+        flex-direction: column;
+        > .Row {
+          display: flex;
+          height: $height-row;
+          background-color: $color-gray-9;
+          &.EmptyRow {
+            height: $height-row * 2;
+            > .Cell {
+              line-height: $height-row * 2;
+              border: none;
+            }
+          }
+          &.HeaderRow {
+            position: sticky;
+            top: $height-row;
+            background: var(--color-dark__title-module);
+            &:nth-child(2) {
+              top: $height-row * 2;
+            }
+          }
+          &.FooterRow {
+            background: var(--color-dark__title-module);
+            height: $height-row * 1.5;
+            > .Cell {
+              border-bottom: none;
+            }
+          }
+          > .Cell {
+            &:not(:first-child) {
+              border-left: 1px solid $color-dark__separator;
+            }
+            &.HeaderCell {
+              position: relative;
+            }
+            border-bottom: 1px solid $color-dark__separator;
+            flex: 1;
+            text-align: center;
+            line-height: $height-row;
+            vertical-align: middle;
+          }
+        }
+      }
+
+      > table {
+        width: 100%;
+        table-layout: fixed;
+        border-style: hidden;
+        border-collapse: unset;
+        tr {
+          > th,
+          > td {
+            border: 1px solid $color-dark__separator;
+            text-align: center;
+            height: $height-row;
+            line-height: $height-row;
+            vertical-align: middle;
+          }
+          > td {
+            background-color: $color-gray-9;
+            &.EmptyRow {
+              height: $height-row * 2;
+            }
+          }
+          > th {
+            position: sticky;
+            top: 0;
+          }
+        }
+
+        &:first-child td,
+        &:first-child th {
+          border-top: 0;
+        }
+
+        td:first-child,
+        th:first-child {
+          border-left: 0;
+        }
+
+        &:last-child td,
+        &:last-child th {
+          border-bottom: 0;
+        }
+
+        td:last-child,
+        th:last-child {
+          border-right: 0;
+        }
+
+        > thead {
+          > tr {
+            &:last-child {
+              > th {
+                position: sticky;
+                top: $height-row * 2;
+                background: var(--color-dark__title-module);
+                border: 1px solid $color-dark__separator;
+              }
+            }
+            &:first-child {
+              > th {
+                position: sticky;
+                top: $height-row;
+                background: var(--color-dark__title-module);
+                border: 1px solid $color-dark__separator;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

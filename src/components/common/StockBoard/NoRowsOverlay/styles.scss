@@ -1,0 +1,14 @@
+@import 'styles/variables.scss';
+
+.NoRowsOverlay {
+  display: flex;
+  align-items: center;
+  > .NoRowsText {
+    margin-right: 5px;
+  }
+  > .RefreshData {
+    text-decoration: underline;
+    color: var(--color-blue-2);
+    cursor: pointer;
+  }
+}

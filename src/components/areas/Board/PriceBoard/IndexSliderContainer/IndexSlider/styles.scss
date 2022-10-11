@@ -1,0 +1,143 @@
+@import 'styles/variables.scss';
+.IndexSlider {
+  border-radius: 3px;
+  padding: 5px;
+  margin: 0 2px;
+  background: var(--color-dark__title-module);
+  transition: all $animation-time;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  p {
+    margin: 0 !important;
+  }
+  > .ChartContainer {
+    width: 100%;
+    height: $height-board-index-chart;
+    margin-bottom: 1px;
+    position: relative;
+    > div {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  > .Info {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex: 1;
+    .InfoIndexName {
+      > .Dropdown {
+        color: $color-white;
+
+        > .DropdownToggle {
+          width: 80px;
+          height: 15px !important;
+          opacity: 1;
+          background-color: var(--color-dark__title-module);
+          color: $color-white;
+          span {
+            width: 100px !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          &:hover {
+            background-color: $color-dark__hover-tab;
+          }
+        }
+
+        > .DropdownMenu {
+          height: 300px !important;
+          overflow: auto;
+        }
+      }
+      > .Dropdown.SliderDropdownWithVCSC {
+        > .DropdownToggle {
+          width: fit-content !important;
+          span {
+            width: fit-content !important;
+            font-weight: 600;
+            font-size: 1.3rem !important;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+          }
+          .DropdownLogo {
+            margin-left: 2px;
+          }
+        }
+      }
+    }
+    .InfoIndexPoint {
+      .InfoIndexTotalPoint {
+        font-weight: 500;
+      }
+      span {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  > .SharesBil {
+    color: red;
+    position: relative;
+    flex: 1;
+    .Shares,
+    .Bil {
+      width: 50%;
+      text-align: center;
+      .SharesBilNumber {
+        color: $color-gray-6;
+        margin-right: 5px;
+      }
+      .SharesBilText {
+        color: var(--color-yellow-logo-light);
+        &.SharesBilTextVcsc {
+          color: var(--color-Indexslider__highlight);
+        }
+      }
+    }
+  }
+
+  > .StockChange {
+    display: none !important;
+    p {
+      padding: 0 7px;
+    }
+    .TotalStocks {
+      margin-right: 9px;
+    }
+    .StockChangeIcon {
+      font-weight: 900;
+      margin-right: 6px;
+    }
+  }
+  // common class
+  .Right {
+    position: absolute;
+    right: 0px;
+    display: flex;
+    align-items: center;
+  }
+  .IconCenter {
+    display: flex;
+    align-items: center;
+  }
+  .IncreaseColor {
+    color: $color-dark__green;
+  }
+  .DecreaseColor {
+    color: $color-dark__red;
+  }
+  .UnchangeColor {
+    color: $color-dark__yellow;
+  }
+  .CeilColor {
+    color: $color-dark__purple;
+  }
+  .FloorColor {
+    color: $color-dark__teal;
+  }
+}

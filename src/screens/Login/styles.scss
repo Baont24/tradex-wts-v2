@@ -1,0 +1,282 @@
+@import 'styles/variables.scss';
+
+$color-login__background: #181d25;
+
+.Login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  & > div {
+    z-index: 2;
+  }
+  > .Logo {
+    position: relative;
+  }
+  > .Languages {
+    position: absolute;
+    right: 50px;
+    top: 10%;
+  }
+  > .Lang {
+    position: absolute;
+  }
+  > .LoginFormContainer {
+    > .LoginForm {
+      position: relative;
+      box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.75);
+      width: 260px;
+      background-color: $color-login__background;
+      border-radius: 5px;
+      padding: 20px 10px;
+      > .CloseButton {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        background-color: $color-dark__separator;
+        border-radius: 50%;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        cursor: pointer;
+        border: 1px solid $color-gray-9;
+        z-index: 1;
+        > svg {
+          margin: auto;
+          color: var(--color-yellow-logo-light);
+        }
+      }
+      > .Title {
+        font-size: 1.4rem !important;
+        color: var(--color-yellow-logo-light);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-weight: 500;
+        text-align: center;
+      }
+      > .form-group {
+        > .form-label {
+          margin-bottom: 5px;
+          color: $color-gray-4;
+        }
+        > .input-group {
+          margin-bottom: 10px;
+          > .input-group-prepend {
+            margin: 0;
+            border-radius: 4px 0 0 4px;
+            > .input-group-text {
+              background-color: #2e3136;
+              border-color: #2e3136;
+              color: $color-gray-4;
+            }
+            > .DropdownUsername {
+              width: 60px;
+              background-color: #1e232c;
+              > .DropdownToggle {
+                border: none;
+                color: $color-white;
+                &::after {
+                  margin-left: 10px;
+                  vertical-align: middle;
+                }
+                &:focus {
+                  box-shadow: none;
+                  opacity: 0.8;
+                }
+                &:hover {
+                  opacity: 0.8;
+                }
+              }
+              > .DropdownMenu {
+                background-color: #1e232c;
+                > .DropdownItem {
+                  color: $color-white;
+                  &.Active,
+                  &:hover,
+                  &:active {
+                    background-color: var(--color-yellow-logo-light);
+                  }
+                }
+              }
+            }
+          }
+          > .form-control {
+            background: $color-dark__background;
+            border-color: $color-dark__background;
+            color: $color-white;
+            border-radius: 0 4px 4px 0;
+          }
+        }
+      }
+      > .InputPassword {
+        > .input-group {
+          > .form-control {
+            border-radius: 0;
+          }
+          > .input-group-append {
+            border-radius: 0 3px 3px 0;
+            overflow: hidden;
+            border: 1px solid $color-dark__background;
+            background-color: $color-dark__background;
+            > button {
+              color: $color-white;
+              background: transparent;
+            }
+          }
+        }
+      }
+      > .SessionTimout {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        align-items: center;
+        > p {
+          margin: 0;
+          color: $color-gray-4;
+        }
+        ::-webkit-scrollbar-track {
+          background: $color-dark__background;
+        }
+        .Dropdown.DropdownForm {
+          width: 110px;
+          .DropdownMenu {
+            max-height: 300px;
+            overflow: auto;
+          }
+        }
+      }
+      > .InputOTP {
+        > .input-group {
+          display: flex;
+          height: 100%;
+          align-items: center;
+          > .input-group-prepend {
+            text-align: center;
+            > .input-group-text {
+              border-radius: 4px;
+              width: 80px;
+              color: $color-gray-4;
+              letter-spacing: 0.8rem;
+              padding-left: 0.75rem + 0.8rem;
+              justify-content: center;
+            }
+          }
+          > .form-control {
+            border-radius: 4px;
+            margin-right: 10px;
+          }
+          > .CaptchaGenerator {
+            height: 27px;
+            border-radius: 4px;
+            background-color: #1e232c;
+            border-radius: 4px 0 0 4px;
+            padding: 3px;
+          }
+          > .RefreshCaptcha {
+            background-color: #2e3136;
+            color: $color-gray-4;
+            height: 27px;
+            width: 27px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0 4px 4px 0;
+          }
+        }
+      }
+      > .Function {
+        margin-bottom: 10px;
+        > a {
+          color: var(--color-yellow-logo-light);
+        }
+      }
+      > .SubmitButton {
+        width: 100%;
+        height: 24px;
+        border-radius: 3px;
+        background-color: var(--color-yellow-logo-light);
+        color: $color-white;
+        text-align: center;
+      }
+    }
+  }
+  > .BottomMenu {
+    > .Menu {
+      display: flex;
+      justify-content: center;
+      > .MenuItem {
+        padding: 13px 15px;
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+      }
+    }
+    > .Contact {
+      display: flex;
+      justify-content: center;
+      flex-flow: wrap;
+      > .ContactItem {
+        padding: 13px 15px;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        p {
+          display: inline-flex;
+          margin-bottom: 0;
+          margin-left: 4px;
+        }
+        a.MarginLeft {
+          margin-left: 4px;
+        }
+      }
+      > .ContactItem {
+        svg {
+          width: 16px;
+        }
+      }
+      > .ContactItem.PhoneNumber {
+        a {
+          color: var(--color-yellow-logo-light);
+        }
+        svg {
+          fill: var(--color-yellow-logo-light);
+          stroke: var(--color-yellow-logo-light);
+        }
+      }
+    }
+  }
+  > .LoginBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        0deg,
+        rgba(10, 14, 21, 0.7),
+        rgba(10, 14, 21, 0.7)
+      );
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

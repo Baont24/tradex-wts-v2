@@ -1,0 +1,67 @@
+@import 'styles/variables.scss';
+
+.RealizedPortfolio {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  > .TabTable {
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+
+    > .TabContent {
+      flex: 1;
+      display: flex;
+
+      > .tab-pane {
+        flex: 1;
+
+        > .TabBoard {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+
+          > .TabAccount {
+            color: $color-gray-4;
+            margin: 5px auto 20px 12px;
+            > thead > tr {
+              th {
+                padding-left: 40px;
+                &:first-child {
+                  padding-left: 0;
+                }
+              }
+            }
+            > tbody > tr {
+              .Default {
+                color: $color-gray-4 !important;
+              }
+              > td {
+                padding-left: 40px;
+                &:first-child {
+                  width: 250px;
+                  padding-left: 0;
+                }
+              }
+            }
+          }
+        }
+        .PortfolioData {
+          flex: 1;
+          .ag-root {
+            border: none !important;
+            border-radius: 0;
+            .ag-row {
+              .Cell {
+                &:last-child {
+                  border-right: 1px solid $color-dark__separator;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

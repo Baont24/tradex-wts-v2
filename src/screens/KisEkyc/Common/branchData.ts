@@ -1,0 +1,17 @@
+export const branchVN = [
+  'HỘI SỞ CHÍNH TP. HỒ CHÍ MINH',
+  'PHÒNG GIAO DỊCH  SÀI GÒN  – TP. HCM',
+  'PHÒNG GIAO DỊCH  PHẠM NGỌC THẠCH  – TP. HCM',
+  'CHI NHÁNH HÀ NỘI',
+  'PHÒNG GIAO DỊCH BÀ TRIỆU – HÀ NỘI',
+  'PHÒNG GIAO DỊCH LÁNG HẠ – HÀ NỘI',
+];
+
+export const branchEN = [
+  'HEAD OFFICE',
+  'SAI GON TRANSACTION OFFICE',
+  'PHAM NGOC THACH TRANSACTION OFFICE',
+  'HA NOI BRANCH',
+  'BA TRIEU TRANSACTION OFFICE',
+  'LANG HA TRANSACTION OFFICE',
+];

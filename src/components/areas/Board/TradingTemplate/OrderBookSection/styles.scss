@@ -1,0 +1,108 @@
+@import 'styles/variables.scss';
+.TradingTemplate {
+  .OrderBookSection {
+    position: relative;
+    .TabTable {
+      border: none !important;
+      .OrderBookSectionTab {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        > .OrderBookFilter {
+          padding: 10px;
+          display: flex;
+          border: 1px solid $color-dark__separator;
+          background-color: var(--color-dark__bg-module);
+          border-bottom: none;
+          border-top: none;
+          > div {
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+            height: 24px;
+          }
+          > div:last-child {
+            margin-right: 0;
+          }
+          .OrderBookAccount {
+            position: relative;
+            width: 130px;
+          }
+          .OrderBookCancel {
+            flex: 2;
+            .CancelButton {
+              min-width: 55px;
+              width: max-content;
+              border-radius: 3px;
+              height: 24px;
+              background: $color-dark__red-button;
+              color: $color-white;
+              &[disabled] {
+                color: $color-gray-4;
+                background-color: var(--color-dark__title-module);
+                border: 1px solid $color-dark__separator;
+              }
+            }
+          }
+          .OrderBookStockSymbol {
+            .OrderBookSymbolPicker {
+              width: 130px;
+            }
+          }
+          .OrderBookDropdown {
+            > .Dropdown {
+              width: 100px;
+              ::-webkit-scrollbar-track {
+                background: $color-dark__background;
+              }
+              .DropdownMenu {
+                max-height: 300px;
+                overflow: auto;
+              }
+            }
+          }
+          .OrderBookQuery {
+            width: auto;
+          }
+        }
+
+        > .OrderBookTable {
+          flex: 1;
+          > .SheetData,
+          .ag-root {
+            border-radius: 0 0 4px 4px;
+            border-radius: unset;
+            .ag-header .ag-header-row .AlignCheckBox {
+              display: grid;
+            }
+            .ag-header-select-all {
+              margin-right: 0;
+            }
+            .ag-cell-focus {
+              background-color: unset;
+            }
+            .ag-row {
+              .ViewCell {
+                text-align: center;
+                color: var(--color-yellow-logo-light);
+                cursor: pointer;
+                &.HideViewCell {
+                  pointer-events: none;
+                  > .ag-react-container {
+                    display: none;
+                  }
+                }
+              }
+              .AlignCheckBox {
+                > .ag-cell-wrapper {
+                  display: flex;
+                  justify-content: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import 'styles/variables.scss';
+
+.TabContent {
+  overflow: auto;
+  overflow-x: hidden;
+  .TabAssetInforDerTrading {
+    height: 1px;
+    .TableSummary {
+      border-radius: 5px;
+      background-color: var(--color-dark__bg-module);
+      border: 1px solid $color-dark__separator;
+      table {
+        width: 100%;
+        tr td {
+          width: 50%;
+        }
+        tbody {
+          tr:first-child td {
+            border-top: none;
+          }
+          tr td {
+            padding: 8px 12px;
+            border-top: 1px solid $color-gray-2;
+          }
+          tr td:last-child {
+            text-align: end;
+            border-left: 1px solid $color-gray-2;
+          }
+          .TextIndent {
+            text-indent: 20px;
+          }
+        }
+      }
+    }
+  }
+}

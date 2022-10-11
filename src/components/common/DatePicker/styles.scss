@@ -1,0 +1,44 @@
+@import 'styles/variables.scss';
+
+.DatePicker {
+  width: 100%;
+  position: relative;
+
+  &.Disabled {
+    opacity: 0.3;
+  }
+
+  > .react-datepicker-wrapper {
+    width: 100%;
+    > .react-datepicker__input-container {
+      width: 100%;
+      > input {
+        background-color: $color-dark__background;
+        height: $height-form-field;
+        width: 100%;
+        border: 1px solid $color-dark__separator;
+        border-radius: 4px;
+        outline: none;
+        color: $color-white;
+        padding: 0 20px 0 5px;
+        text-align: right;
+      }
+    }
+  }
+  .react-datepicker__triangle {
+    left: 50% !important;
+  }
+  &.Right {
+    .react-datepicker-popper {
+      left: unset !important;
+      right: 0;
+    }
+  }
+  svg {
+    position: absolute;
+    width: 12px;
+    right: 5px;
+    top: 5px;
+    color: $color-gray-4;
+  }
+}

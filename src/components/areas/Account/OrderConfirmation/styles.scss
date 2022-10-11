@@ -1,0 +1,173 @@
+@import 'styles/variables.scss';
+
+.OrderConfirmation {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  > .TabTable {
+    display: flex;
+    flex-direction: column;
+    background-color: unset !important;
+    border: none !important;
+
+    > .NavTab {
+      border: 1px solid $color-dark__separator;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+    }
+
+    > .TabContent {
+      flex: 1;
+      display: flex;
+
+      > .tab-pane {
+        flex: 1;
+
+        > .OrderConfirmationTab {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          > .OrderConfirmationFilter {
+            display: flex;
+            padding: 10px;
+            border: 1px solid $color-dark__separator;
+            background-color: var(--color-dark__bg-module);
+            border-bottom: none;
+            border-top: none;
+            > div {
+              margin-right: 30px;
+              display: flex;
+              align-items: center;
+              height: 24px;
+              p {
+                width: max-content;
+                margin: 0;
+                margin-right: 5px;
+              }
+            }
+            .OrderConfirmationAccount {
+              p {
+                width: 110px;
+              }
+              width: 200px;
+              .AccountDropdown {
+                height: 24px;
+              }
+            }
+            .OrderConfirmationStockSymbol {
+              width: 200px;
+              p {
+                width: 80px;
+              }
+              .OrderConfirmationSymbolPicker {
+                width: 125px;
+                color: $color-white;
+              }
+            }
+            .OrderConfirmationDropdown {
+              > .Dropdown {
+                width: 100px;
+              }
+              ::-webkit-scrollbar-track {
+                background: $color-dark__background;
+              }
+              .DropdownMenu {
+                max-height: 300px;
+                overflow: auto;
+              }
+            }
+            .OrderConfirmationDate {
+              width: auto;
+            }
+          }
+
+          > .OrderConfirmationTable {
+            flex: 1;
+            margin-bottom: 10px;
+            .ag-root {
+              border-radius: 0 0 4px 4px;
+              .ag-header .ag-header-row .AlignCheckBox {
+                display: grid;
+                .ag-checkbox {
+                  margin: 0;
+                }
+              }
+              .ag-header-select-all {
+                margin-right: 0;
+                transform: translateX(25%);
+              }
+              .ag-row .AlignCheckBox {
+                > .ag-cell-wrapper {
+                  display: flex;
+                  justify-content: center;
+                }
+              }
+            }
+          }
+
+          > .OrderConfirmationFooter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            > .Note {
+              display: flex;
+              align-items: center;
+              > .ErrorIcon {
+                margin: 0 5px;
+                color: $color-dark__red;
+                cursor: pointer;
+              }
+            }
+            > .ConfirmButton {
+              width: 90px;
+              height: 24px;
+              border-radius: 3px;
+              background-color: var(--color-yellow-logo-light);
+              color: $color-black;
+              &[disabled] {
+                color: $color-gray-4;
+                background-color: var(--color-dark__title-module);
+                border: 1px solid $color-dark__separator;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.OtpModalDialog {
+  .ConfirmOrderModal {
+    padding: 10px !important;
+    .Title {
+      color: var(--color-yellow-logo-light);
+      font-size: 1.4rem !important;
+      margin-bottom: 10px;
+    }
+    .OrderTable {
+      max-height: 260px;
+      overflow: auto;
+      > table {
+        width: 100%;
+        border-radius: 4px;
+        tr {
+          text-align: center;
+          > th,
+          > td {
+            height: 26px;
+            border: 1px solid $color-dark__separator;
+          }
+
+          > th {
+            background-color: rgba(
+              $color: var(--color-dark__title-module),
+              $alpha: 0.5
+            );
+            color: $color-gray-4;
+          }
+        }
+      }
+    }
+  }
+}

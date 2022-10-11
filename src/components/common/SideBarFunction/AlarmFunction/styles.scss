@@ -1,0 +1,54 @@
+@import 'styles/variables.scss';
+
+.AlarmFunction {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  table.AlarmTable,
+  table.AlarmHistoryTable {
+    width: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow-y: scroll;
+    flex-grow: 1;
+    tr {
+      height: 26px;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--color-dark__title-module);
+      }
+      &.SelectedRow {
+        background-color: rgba($color: var(--color-yellow-logo), $alpha: 0.5);
+      }
+      th {
+        color: $color-gray-4;
+        position: sticky !important;
+        top: 0;
+        z-index: 1;
+      }
+      td,
+      th {
+        border-bottom: 1px solid $color-dark__separator;
+        &:not(:last-child) {
+          border-right: 1px solid $color-dark__separator;
+        }
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+        user-select: none;
+      }
+    }
+  }
+
+  > .Alarms {
+    flex: 1;
+  }
+  > .AlarmsHistory {
+    flex: 1;
+  }
+}

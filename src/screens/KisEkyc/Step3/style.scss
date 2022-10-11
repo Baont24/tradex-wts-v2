@@ -1,0 +1,12 @@
+@import 'styles/variables.scss';
+
+.Step3 {
+  display: block;
+  margin-top: 60px;
+  .PersonalInfoTitle {
+    color: $kis-color-ekyc-title;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+}

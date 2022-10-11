@@ -1,0 +1,131 @@
+@import 'styles/variables.scss';
+
+$size-alarm-action: 20px;
+
+table.AlarmTable {
+  background-color: rgba($color: var(--color-dark__title-module), $alpha: 0.5);
+  tr {
+    height: 26px;
+    &:hover {
+      .AlarmAction {
+        display: flex !important;
+      }
+    }
+    > th,
+    > td {
+      border-right: none !important;
+      position: relative;
+      > .ActionCell {
+        display: flex;
+        align-items: center;
+        > .AlarmFrequency {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          flex: 1;
+        }
+        > .AlarmAction {
+          width: $size-alarm-action;
+          height: $size-alarm-action;
+          background-color: var(--color-dark__bg-module);
+          border-radius: 3px;
+          display: none;
+          color: $color-gray-4;
+          margin-left: 5px;
+          &:hover {
+            color: var(--color-yellow-logo);
+          }
+          svg {
+            margin: auto;
+            width: 12px;
+          }
+          &.DisableAction {
+            opacity: 1;
+          }
+          &.EditAction {
+            opacity: 1;
+          }
+          &.DeleteAction {
+            opacity: 1;
+          }
+        }
+      }
+
+      &.AlarmPopup {
+        height: 170px;
+        background-color: var(--color-dark__bg-module);
+        overflow: unset;
+        > .Arrow {
+          position: absolute;
+          display: block;
+          width: 1rem;
+          height: 0.5rem;
+          margin: 0 0.3rem;
+          top: -5px;
+          left: 25px;
+          &::before,
+          &::after {
+            position: absolute;
+            display: block;
+            content: '';
+            border-color: transparent;
+            border-style: solid;
+          }
+          &::before {
+            top: 0;
+            border-width: 0 0.5rem 0.5rem 0.5rem;
+            border-bottom-color: $color-dark__separator;
+          }
+          &::after {
+            top: 1px;
+            border-width: 0 0.5rem 0.5rem 0.5rem;
+            border-bottom-color: var(--color-dark__bg-module);
+          }
+        }
+        > .AlarmInfo {
+          padding: 12px 20px;
+          > .AlarmInfoRow {
+            display: flex;
+            margin-bottom: 5px;
+            > .AlarmInfoCell {
+              &:first-child {
+                flex: 1;
+                color: $color-gray-4;
+              }
+              &:last-child {
+                flex: 2;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    > th {
+      background-color: var(--color-dark__title-module);
+      &.SymbolCol {
+        text-align: center;
+      }
+    }
+
+    > td.SymbolCol {
+      height: 26px;
+      position: relative;
+      padding-left: 15px;
+      &::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: $color-dark__green;
+        position: absolute;
+        top: 9px;
+        left: 5px;
+      }
+      &.Disabled {
+        &::before {
+          background-color: $color-dark__red;
+        }
+      }
+    }
+  }
+}

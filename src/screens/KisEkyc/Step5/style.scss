@@ -1,0 +1,52 @@
+@import 'styles/variables.scss';
+
+.Step5 {
+  margin: auto;
+  margin-top: 60px;
+  animation: fadeInUp 0.8s;
+  max-width: 660px;
+  .Title {
+    text-align: left;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    color: $kis-color-ekyc-title;
+  }
+  .OtpInput {
+    width: 30px !important;
+    height: 30px;
+    margin: 10px;
+  }
+  .Timer {
+    color: red;
+  }
+  .ResendText {
+    margin-top: 1rem;
+    .Resend {
+      color: $kis-color-ekyc-resend-blue;
+      margin: 0 5px;
+    }
+  }
+
+  .Done {
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 90px;
+    padding: 30px;
+    p {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+    a {
+      padding: 5px;
+      background-color: #007bff !important;
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}

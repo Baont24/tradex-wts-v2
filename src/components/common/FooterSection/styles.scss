@@ -1,0 +1,138 @@
+@import 'styles/variables.scss';
+
+.FooterSection {
+  background-color: var(--color-dark__bg-module);
+  position: relative;
+
+  > .BarSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: $width-board-function - 1px;
+    height: $height-board-footer;
+    border-top: 1px solid $color-dark__separator;
+    > .MarketStatusSection {
+      display: flex;
+      align-items: center;
+      align-self: stretch;
+      > .QuickOrder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 147px;
+        background-color: var(--color-yellow-logo-light);
+        padding: 0 10px;
+        align-self: stretch;
+        cursor: pointer;
+        > svg {
+          margin-right: 10px;
+        }
+        > span {
+          font-size: 15px !important;
+        }
+      }
+      > .SocialSection {
+        margin-right: 5px;
+        padding: 5px;
+        border-radius: 4px;
+        > a {
+          display: flex;
+          align-items: center;
+          > svg {
+            font-size: 1.6rem;
+            margin-right: 10px;
+          }
+          &:hover {
+            background-color: $color-dark__background;
+          }
+        }
+      }
+
+      > .ClockSection {
+        margin-right: 5px;
+        margin-left: 18px;
+        color: $color-light__gray;
+        > svg {
+          margin-right: 10px;
+          height: 10px;
+        }
+      }
+
+      > .MarketStatus {
+        margin-right: 5px;
+        background-color: $color-dark__background;
+        padding: 5px;
+        border-radius: 4px;
+        .Status {
+          color: $color-dark__green;
+          &.Closed {
+            color: $color-dark__red;
+          }
+          &.Connecting {
+            color: $color-dark__yellow;
+          }
+          &.Disconnected {
+            color: $color-dark__red;
+          }
+          &.NotAvailable {
+            color: rgba($color: $color-white, $alpha: 0.5);
+          }
+        }
+      }
+    }
+
+    > .InfoSection {
+      display: flex;
+      align-self: stretch;
+      align-items: stretch;
+      > .InfoItem {
+        border-right: 1px solid $color-dark__separator;
+        padding: 0 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        &:hover,
+        &.Active {
+          background-color: var(--color-dark__title-module);
+        }
+      }
+    }
+  }
+
+  > .OrderSection {
+    height: 240px;
+    width: 100%;
+    bottom: $height-board-footer;
+    background-color: var(--color-dark__bg-module);
+    padding-right: $width-board-function - 1px;
+
+    .TabTable {
+      border-radius: 0;
+      height: 100%;
+      overflow: unset;
+      > .NavTab {
+        height: 30px;
+        padding-right: 10px;
+        min-height: 30px;
+      }
+      > .TabContent {
+        height: calc(100% - #{$height-board-footer});
+        overflow: unset;
+        > .tab-pane {
+          height: 100%;
+          > .ScrollBar {
+            overflow: unset !important;
+            > div:first-child {
+              overflow: unset !important;
+            }
+          }
+        }
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 0px;
+      height: 0px;
+    }
+  }
+}

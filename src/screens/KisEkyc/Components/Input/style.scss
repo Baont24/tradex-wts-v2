@@ -1,0 +1,19 @@
+.EkycInput {
+  .Required {
+    color: red;
+  }
+  .input-group-text {
+    background-color: white !important;
+    border-left: 0px solid white !important;
+    border-top-right-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+  }
+  .form-control {
+    border-right: 0px solid white !important;
+  }
+  .form-label {
+    color: #828282 !important;
+    font-weight: bold !important;
+    white-space: nowrap;
+  }
+}

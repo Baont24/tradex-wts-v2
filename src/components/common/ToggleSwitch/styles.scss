@@ -1,0 +1,78 @@
+@import 'styles/variables.scss';
+
+.ToggleSwitch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+
+  > span.Label {
+    font-size: 13px;
+    color: $color-gray-4;
+    line-height: 1;
+  }
+
+  > .Switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 12px;
+    margin-bottom: 0;
+    margin-right: 10px;
+
+    > input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      &:focus {
+        outline: none;
+      }
+
+      &:checked + .Slider {
+        background-color: var(--color-yellow-logo-light);
+      }
+
+      &:focus + .Slider {
+        box-shadow: 0 0 1px var(--color-yellow-logo-light);
+      }
+
+      &:checked + .Slider:before {
+        -webkit-transform: translateX(13px);
+        -ms-transform: translateX(13px);
+        transform: translateX(13px);
+      }
+    }
+
+    .Slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $color-dark__separator;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      width: 30px;
+
+      &:before {
+        position: absolute;
+        content: '';
+        height: 18px;
+        width: 18px;
+        left: 0;
+        bottom: -3px;
+        background-color: $color-gray-3;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+      &.Round {
+        border-radius: 36px;
+      }
+
+      &.Round:before {
+        border-radius: 50%;
+      }
+    }
+  }
+}

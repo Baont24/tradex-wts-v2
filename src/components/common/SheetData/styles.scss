@@ -1,0 +1,36 @@
+@import 'styles/variables.scss';
+
+.SheetData {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+
+  &.TableHasGroupHeader,
+  &.TableNoGroupHeader {
+    .ag-root {
+      border-radius: 4px;
+      border: 1px solid $color-dark__separator !important;
+
+      .ag-header-cell {
+        border-color: $color-dark__separator;
+      }
+      .ag-floating-bottom {
+        .Cell {
+          background-color: var(--color-dark__title-module);
+          border-bottom: none !important;
+        }
+      }
+    }
+  }
+  & .ag-overlay-loading-wrapper {
+    background-color: unset;
+  }
+  &.TableHasGroupHeader {
+    @include agGridReact(26px, 52px, false, false, false, true);
+  }
+
+  &.TableNoGroupHeader {
+    @include agGridReact(26px, false, false, false, false, true);
+  }
+}

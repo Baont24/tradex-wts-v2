@@ -1,0 +1,27 @@
+@import 'styles/variables.scss';
+
+.CustomerProfile {
+  display: flex;
+  height: max-content;
+
+  > div {
+    margin: 8px;
+  }
+
+  .CustomerProfileDetails {
+    width: 300px;
+    text-align: center;
+    border: 1px solid #828282;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .CustomerProfileMoreDetails {
+      .CustomerProfileName {
+        margin-top: 10px;
+        font-size: 2rem;
+      }
+    }
+  }
+}

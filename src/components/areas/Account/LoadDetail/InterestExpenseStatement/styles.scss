@@ -1,0 +1,58 @@
+@import 'styles/variables.scss';
+
+.InterestExpenseStatement {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  > .InterestExpenseStatementTab {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    > .InterestExpenseStatementFilter {
+      display: flex;
+      padding: 10px;
+      background-color: var(--color-dark__bg-module);
+      border-bottom: none;
+      border-top: none;
+      > div {
+        margin-right: 30px;
+        display: flex;
+        align-items: center;
+        height: 24px;
+        > p {
+          width: max-content;
+          margin: 0;
+          margin-right: 5px;
+          color: $color-gray-4;
+          > span {
+            color: $color-white;
+          }
+        }
+      }
+
+      .InterestExpenseStatementAccount {
+        width: 200px;
+        > p {
+          margin-right: 5px;
+          white-space: nowrap;
+        }
+      }
+
+      .InterestExpenseStatementQuery,
+      .InterestExpenseStatementDate {
+        width: 300px;
+      }
+    }
+
+    > .SheetData {
+      .ag-root {
+        border-radius: 0 0 4px 4px;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+      }
+    }
+  }
+}

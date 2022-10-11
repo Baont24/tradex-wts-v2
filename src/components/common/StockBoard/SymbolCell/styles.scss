@@ -1,0 +1,40 @@
+.SymbolCell,
+.SymbolCellWatchlist {
+  cursor: pointer;
+  justify-content: center;
+
+  > .ag-cell-value {
+    text-align: left;
+    > .DiviendDate {
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+  }
+
+  > .ag-cell-value.AgCellValueWithVCSC {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  > .ag-icon-cross,
+  > .ag-icon-menu {
+    cursor: pointer;
+    display: none !important;
+    color: white;
+    position: absolute;
+    right: 0;
+    font-size: 2rem !important;
+    line-height: 2rem;
+    opacity: 0.7;
+    font-weight: bold;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  > .ag-icon-menu {
+    right: 20px;
+    cursor: unset;
+  }
+}

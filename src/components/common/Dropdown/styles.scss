@@ -1,0 +1,119 @@
+@import 'styles/variables.scss';
+
+.Dropdown {
+  line-height: inherit;
+  color: $color-gray-4;
+  height: 100%;
+  width: 100%;
+  &.Disabled {
+    opacity: 0.5 !important;
+  }
+  > .DropdownToggle {
+    height: 100%;
+    width: 100%;
+    background-color: $color-dark__background;
+    border-radius: 4px;
+    border: none;
+    color: $color-gray-4;
+    padding-left: 5px;
+    padding-right: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    &[disabled] {
+      opacity: 0.5;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+    &::after {
+      display: none;
+    }
+    > .DropdownLogo {
+      margin: 3px 0px 3px auto;
+    }
+
+    &.Active {
+      background-color: var(--color-blue-2) !important;
+    }
+    &.ActiveVcsc {
+      background-color: var(--color-blue-2) !important;
+    }
+    > span {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  > .DropdownMenu {
+    background-color: $color-dark__background;
+    margin: 0;
+    &.DropdownMenuVcsc {
+      border: 0.003px solid var(--color-blue-2) !important;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: $color-dark__background;
+    }
+    > .dropdown-item {
+      color: $color-white;
+      padding: 0.5rem 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &:hover,
+      &.active {
+        background-color: var(--color-yellow-logo-light);
+      }
+    }
+    > .DropdownItemVcsc {
+      color: $color-white;
+      padding: 0.5rem 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &:hover,
+      &.active {
+        background-color: var(--color-blue-2) !important;
+      }
+    }
+  }
+
+  &.DropdownForm {
+    border: 1px solid $color-dark__separator;
+    background-color: $color-dark__background;
+    border-radius: 4px;
+    height: $height-form-field;
+    > .DropdownMenu {
+      width: 100%;
+      border: 1px solid $color-dark__separator;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+
+    > .DropdownToggle {
+      height: $height-form-field - 2px;
+      opacity: 1;
+    }
+  }
+
+  .DropdownEdit {
+    padding: 6px 10px;
+    height: 40px;
+    background-color: var(--color-dark__bg-module);
+    input {
+      background: $color-dark__background;
+      color: $color-white;
+      width: 100%;
+      border: 1px solid var(--color-boder-input);
+      border-radius: 3px;
+      height: 28px;
+      padding-left: 5px;
+      &:focus {
+        outline: none;
+      }
+    }
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

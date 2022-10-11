@@ -1,0 +1,225 @@
+@import 'styles/variables.scss';
+
+$watchlist-width: 130px;
+$watchlist-button-width: 20px;
+
+.SymbolInfo {
+  display: flex;
+  height: 100%;
+  padding: 10px;
+
+  > .ChartSection {
+    flex: 5;
+    margin-right: 10px;
+  }
+
+  > .InfoSection {
+    display: flex;
+    height: 100%;
+    width: 560px;
+
+    > .SummarySection {
+      flex: 9;
+      margin-right: 10px;
+
+      > .Summary {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        background-color: $color-gray-9;
+        padding: 5px 10px;
+        height: $height-symbol-info-summary;
+        justify-content: space-between;
+
+        > .CompanyTitle {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          > .Symbol {
+            display: flex;
+            align-items: center;
+
+            > p {
+              font-size: 1.3rem;
+              font-weight: 500;
+              margin-right: 5px;
+              margin-bottom: 0;
+            }
+
+            > .CashDividend {
+              cursor: pointer;
+              margin-right: 5px;
+            }
+
+            > .Market {
+              color: var(--color-yellow-logo-light);
+              margin-right: 5px;
+              white-space: nowrap;
+            }
+          }
+
+          > .Watchlist {
+            height: 20px;
+            width: 20px;
+            background-color: var(--color-dark__title-module);
+            border-radius: 3px;
+            cursor: pointer;
+
+            > .Dropdown {
+              height: $watchlist-button-width;
+              &.show {
+                > .DropdownToggle {
+                  background-color: var(--color-yellow-logo-light);
+                  > svg {
+                    color: $color-black;
+                  }
+                }
+              }
+
+              > .DropdownToggle {
+                width: $watchlist-button-width;
+                height: $watchlist-button-width;
+                display: flex;
+                background-color: transparent;
+                padding: 0;
+                opacity: unset;
+
+                > svg {
+                  margin: auto;
+                }
+
+                &:hover {
+                  background-color: var(--color-yellow-logo-light);
+                  > svg {
+                    color: $color-black;
+                  }
+                }
+              }
+
+              > .DropdownMenu {
+                border: 1px solid $color-dark__separator;
+                border-radius: 3px;
+                color: $color-white;
+                width: $watchlist-width;
+                padding: 0;
+                left: unset !important;
+                transform: none !important;
+                top: unset !important;
+                right: 0;
+                > .WatchlistItem {
+                  padding: 5px;
+                  &:hover {
+                    background-color: var(--color-dark__title-module);
+                  }
+                  &:not(:first-child) {
+                    border-top: 1px solid $color-dark__separator;
+                  }
+                }
+
+                > .WatchlistEmpty {
+                  text-align: center;
+                  padding: 10px;
+                  opacity: 0.5;
+                }
+              }
+            }
+          }
+        }
+
+        > .CompanyName {
+          color: $color-gray-4;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 225px;
+          margin-bottom: 5px;
+        }
+
+        > .SummaryTitle,
+        > .SummaryContent {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        > .SummaryTitle {
+          margin-bottom: 7px;
+
+          > .SubTitle {
+            color: var(--color-yellow-logo-light);
+            font-weight: 500;
+          }
+
+          > .Content {
+            height: 20px;
+            width: 20px;
+            background-color: var(--color-dark__title-module);
+            border-radius: 3px;
+            cursor: pointer;
+            display: flex;
+
+            svg {
+              margin: auto;
+            }
+          }
+        }
+
+        > .SummaryContent {
+          margin-bottom: 5px;
+
+          > .SubTitle {
+            font-weight: 500;
+          }
+
+          > .Content {
+            text-align: right;
+            > span:not(:last-child) {
+              margin-right: 5px;
+            }
+
+            > .Separator {
+              color: rgba($color: $color-white, $alpha: 0.2);
+            }
+          }
+        }
+      }
+    }
+
+    > .QuoteSection {
+      flex: 11;
+    }
+  }
+  .InfoSideMenu {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    > .SummarySection {
+      margin-right: 0px;
+      .Summary {
+        margin-bottom: 2px;
+        margin-top: 2px;
+      }
+    }
+    > .QuoteSection {
+      margin-top: 2px;
+      .TabTable {
+        height: 100%;
+        .TabContent {
+          height: 100%;
+          .tab-pane {
+            height: 100%;
+            .QuoteInfo {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.InfoSideMenuSection {
+  padding: 0px;
+  height: calc(100% - 29px);
+}

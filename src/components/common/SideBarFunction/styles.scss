@@ -1,0 +1,109 @@
+@import 'styles/variables.scss';
+
+.SideBarFunction {
+  background-color: var(--color-dark__bg-module);
+  position: relative;
+  display: flex;
+  z-index: 9;
+  > .FunctionMenu {
+    width: $width-board-function;
+    border-left: 1px solid $color-dark__separator;
+    > .FunctionItem {
+      height: $width-board-function;
+      width: 100%;
+      display: flex;
+      border-bottom: 1px solid $color-dark__separator;
+      cursor: pointer;
+      > .Logo {
+        margin: auto;
+        color: $color-gray-4;
+        > svg {
+          height: 16px;
+        }
+      }
+      &:hover,
+      &.Active {
+        background-color: var(--color-dark__title-module);
+        > .Logo {
+          color: var(--color-yellow-logo-light);
+        }
+      }
+    }
+  }
+  > .FunctionPanel {
+    height: 100%;
+    z-index: 4;
+    border-left: 5px solid $color-dark__separator;
+    width: $width-board-function-panel;
+    overflow-y: scroll;
+    background-color: var(--color-dark__bg-module);
+    position: absolute;
+    right: $width-board-function;
+    > .OrderFunction {
+      .TabContent {
+        padding: 10px;
+      }
+    }
+  }
+  > .FunctionPanelFooter {
+    width: $width-board-function-panel-footer;
+  }
+  .TabTable {
+    border-radius: 0;
+    height: 100%;
+    > .NavTab {
+      height: 30px;
+      padding-right: 10px;
+      min-height: 30px;
+      > .DetailButton {
+        width: 20px;
+        height: 20px;
+        background: var(--color-dark__bg-module);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $color-gray-4;
+      }
+    }
+    > .TabContent {
+      height: calc(100% - 30px);
+      min-height: 200px;
+      > .tab-pane {
+        height: 100%;
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+.BoardTooltip > .tooltip-inner {
+  color: $color-black;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 35px;
+  background-color: $color-white;
+}
+.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+.bs-tooltip-left .arrow::before {
+  border-left-color: $color-white;
+}
+
+@-moz-document url-prefix() {
+  .BoardFunction {
+    .FunctionPanel {
+      scrollbar-width: none;
+      .ScrollBar > div:first-child {
+        margin-bottom: 0 !important;
+        margin-right: -8px !important;
+      }
+    }
+  }
+}

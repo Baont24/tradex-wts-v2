@@ -1,0 +1,291 @@
+@import 'styles/variables.scss';
+
+$color-login__background: #181d25;
+
+.ForgotPassword {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  & > div {
+    z-index: 2;
+  }
+  > .Logo {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    top: 10%;
+  }
+  > .Languages {
+    position: absolute;
+    right: 33%;
+    top: 5%;
+  }
+  > .Lang {
+    position: absolute;
+  }
+  > .ForgotPasswordFormContainer {
+    > .ForgotPasswordForm {
+      position: relative;
+      box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.75);
+      width: 270px;
+      background-color: $color-login__background;
+      border-radius: 5px;
+      padding: 20px 10px;
+
+      > .BottomButton {
+        display: flex;
+        justify-content: space-between;
+
+        > .SubmitButton {
+          width: 100%;
+          height: 34px;
+          border-radius: 3px;
+          background-color: var(--color-blue-2);
+          color: $color-white;
+          text-align: center;
+          margin-right: 10px;
+        }
+        > .CancelButton {
+          width: 100%;
+          height: 34px;
+          border-radius: 3px;
+          background-color: #232527;
+          color: $color-white;
+          text-align: center;
+        }
+      }
+
+      > .SendOTPButton {
+        width: 100%;
+        height: 32px;
+        background-color: var(--color-blue-2);
+        border-radius: 3px;
+        margin: 10px 0;
+        font-size: 10px !important;
+        color: #fff;
+        &[disabled] {
+          background-color: #333639;
+        }
+      }
+
+      > .CloseButton {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        background-color: $color-dark__separator;
+        border-radius: 50%;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        cursor: pointer;
+        border: 1px solid $color-gray-9;
+        z-index: 1;
+        > svg {
+          margin: auto;
+          color: var(--color-yellow-logo-light);
+        }
+      }
+      > .Title {
+        font-size: 1.4rem !important;
+        color: var(--color-yellow-logo-light);
+        font-weight: 400;
+        text-align: center;
+      }
+      > .form-group {
+        > .form-label {
+          margin-bottom: 5px;
+          color: $color-gray-4;
+        }
+        > .input-group {
+          margin-bottom: 10px;
+
+          > .input-group-prepend {
+            width: 28px;
+            margin: 0;
+            border-radius: 4px 0 0 4px;
+            > .input-group-text {
+              width: 28px;
+              text-align: center;
+              background-color: #2e3136;
+              border-color: #2e3136;
+              color: $color-gray-4;
+            }
+            > .DropdownUsername {
+              width: 60px;
+              background-color: #1e232c;
+              > .DropdownToggle {
+                border: none;
+                color: $color-white;
+                &::after {
+                  margin-left: 10px;
+                  vertical-align: middle;
+                }
+                &:focus {
+                  box-shadow: none;
+                  opacity: 0.8;
+                }
+                &:hover {
+                  opacity: 0.8;
+                }
+              }
+              > .DropdownMenu {
+                background-color: #1e232c;
+                > .DropdownItem {
+                  color: $color-white;
+                  &.Active,
+                  &:hover,
+                  &:active {
+                    background-color: var(--color-yellow-logo-light);
+                  }
+                }
+              }
+            }
+          }
+          > .form-control {
+            background: $color-dark__background;
+            border-color: $color-dark__background;
+            color: $color-white;
+            border-radius: 0 4px 4px 0;
+          }
+        }
+      }
+      > .InputPassword {
+        > .input-group {
+          > .form-control {
+            border-radius: 0;
+          }
+
+          > .input-group-append {
+            border-radius: 0 3px 3px 0;
+            overflow: hidden;
+            border: 1px solid $color-dark__background;
+            background-color: $color-dark__background;
+            > button {
+              color: $color-white;
+              background: transparent;
+              > svg {
+                color: #5e616e;
+                margin-right: 3px;
+              }
+            }
+          }
+        }
+      }
+
+      > .InputOTP {
+        > .OtpMessage {
+          font-size: 10px;
+          font-weight: 400;
+        }
+
+        > .input-group {
+          display: flex;
+          height: 100%;
+          align-items: center;
+
+          > .input-group-append {
+            width: 28px;
+          }
+
+          > .form-control {
+            border-radius: 0;
+          }
+        }
+      }
+      > .Function {
+        margin-bottom: 10px;
+        > a {
+          color: var(--color-yellow-logo-light);
+        }
+      }
+
+      > .SubmitButton {
+        width: 100%;
+        height: 34px;
+        border-radius: 3px;
+        background-color: var(--color-blue-2);
+        color: $color-white;
+        text-align: center;
+      }
+    }
+  }
+  > .BottomMenu {
+    > .Menu {
+      display: flex;
+      justify-content: center;
+      > .MenuItem {
+        padding: 13px 15px;
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+      }
+    }
+    > .Contact {
+      display: flex;
+      justify-content: center;
+      flex-flow: wrap;
+      > .ContactItem {
+        padding: 13px 15px;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        p {
+          display: inline-flex;
+          margin-bottom: 0;
+          margin-left: 4px;
+        }
+        a.MarginLeft {
+          margin-left: 4px;
+        }
+      }
+      > .ContactItem {
+        svg {
+          width: 16px;
+        }
+      }
+      > .ContactItem.PhoneNumber {
+        a {
+          color: var(--color-yellow-logo-light);
+        }
+        svg {
+          fill: var(--color-yellow-logo-light);
+          stroke: var(--color-yellow-logo-light);
+        }
+      }
+    }
+  }
+  > .LoginBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        0deg,
+        rgba(10, 14, 21, 0.7),
+        rgba(10, 14, 21, 0.7)
+      );
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

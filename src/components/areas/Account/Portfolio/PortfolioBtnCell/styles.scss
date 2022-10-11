@@ -1,0 +1,17 @@
+@import 'styles/variables.scss';
+.PortfolioBtnCell {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  button {
+    font-size: 10px !important;
+    min-width: 45px;
+    background: $color-dark__red-button;
+    color: $color-white;
+    border-radius: 3px;
+    align-self: center;
+    height: 20px;
+    line-height: 19px;
+  }
+}

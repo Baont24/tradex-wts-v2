@@ -1,0 +1,184 @@
+@import 'styles/variables.scss';
+
+.News {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  > .Header {
+    height: 30px;
+    background-color: var(--color-dark__title-module);
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-dark__separator;
+    > .Left {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      > .Title {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 3px 0;
+        > .TitleUnderline {
+          position: absolute;
+          background-color: var(--color-yellow-logo);
+          height: 3px;
+          width: 100%;
+          bottom: 0;
+          border-radius: 3px 3px 0 0;
+        }
+      }
+
+      #PopoverNews {
+        width: 150px;
+        > .NewsMenuItem {
+          height: 26px;
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          cursor: pointer;
+          &:hover {
+            background-color: var(--color-dark__title-module);
+          }
+          &:not(:last-child) {
+            border-bottom: 1px solid $color-dark__separator;
+          }
+        }
+      }
+
+      svg {
+        margin-left: 3px;
+      }
+    }
+    > .Right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      > .MenuItem {
+        margin-left: 5px;
+        width: 20px;
+        height: 20px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+
+        > #PopoverSetting {
+          width: 300px;
+          min-width: 290px;
+          padding: 10px 5px;
+          > .NewsFilterForm {
+            position: relative;
+            > .FormSection {
+              margin-bottom: 5px;
+              display: flex;
+              flex-direction: column;
+              > .FormRow {
+                display: flex;
+                margin-bottom: 5px;
+                height: 24px;
+                align-items: center;
+                > .CheckBoxSection {
+                  width: 12px;
+                  margin-right: 5px;
+                }
+                > .TitleSection {
+                  color: $color-gray-4;
+                  text-align: right;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  margin-right: 5px;
+                  width: 50px;
+                }
+                > .FieldSection {
+                  height: 100%;
+                  width: 100px;
+                  margin-right: 5px;
+                  &:last-child {
+                    margin-right: 0;
+                  }
+                }
+                > .DateRangePicker {
+                  flex: 1;
+                  > .DatePicker {
+                    width: 100px;
+                  }
+                }
+              }
+            }
+
+            > .ButtonSection {
+              display: flex;
+              justify-content: flex-end;
+              > button {
+                width: 56px;
+                height: 24px;
+                border-radius: 3px;
+              }
+              > .CancelButton {
+                background-color: var(--color-dark__title-module);
+                color: $color-gray-4;
+                margin-right: 10px;
+                border: 1px solid $color-dark__separator;
+              }
+              > .ApplyButton {
+                background-color: var(--color-yellow-logo-light);
+                color: $color-black;
+              }
+            }
+          }
+        }
+
+        &.NewsSearch {
+          width: 72px;
+          border-radius: 3px;
+          overflow: hidden;
+        }
+
+        > .CollapseButton {
+          position: relative;
+        }
+
+        > svg {
+          height: 12px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  > .Content {
+    height: calc(100% - 30px);
+    .NewsItem {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+      &:not(:last-child) {
+        padding-bottom: 10px;
+        border-bottom: 1px solid $color-dark__separator;
+      }
+      > .Title {
+        font-family: $font-roboto-bold;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      > .Detail {
+        display: flex;
+        justify-content: space-between;
+        > .Source {
+          color: $color-gray-4;
+        }
+        > .CreatedDate {
+          color: $color-gray-4;
+        }
+      }
+    }
+  }
+}

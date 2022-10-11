@@ -1,0 +1,104 @@
+@import 'styles/variables.scss';
+
+.Step4 {
+  margin: auto;
+  margin-top: 60px;
+  // animation: fadeInUp 0.8s;
+  max-width: 660px;
+  .Title {
+    text-align: left;
+    margin-top: 45px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .ServiceInfo {
+    padding: 10px;
+    .Subtitle {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      margin-top: 10px;
+    }
+  }
+  .FileUpload {
+    display: flex;
+    justify-content: center;
+    height: 175px;
+    background: $kis-color-ekyc-upload-file;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 40px;
+    .InputContainer {
+      text-align: center;
+    }
+    .Note {
+      text-align: center;
+      margin: 0;
+    }
+    .WarningNote {
+      text-align: center;
+      margin: 0;
+
+      color: red;
+    }
+    .CustomFileInput {
+      color: transparent;
+      width: 35px;
+      height: 35px;
+    }
+    .CustomFileInput::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+    .CustomFileInput::before {
+      content: '+';
+      justify-content: center;
+      align-items: center;
+      color: #2569b0;
+      display: flex;
+      width: 35px;
+      height: 35px;
+      background: transparent;
+      border: 1px solid #2569b0;
+      border-radius: 50%;
+      outline: none;
+      white-space: nowrap;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 16pt;
+    }
+    .CustomFileInput:hover::before {
+      border-color: black;
+    }
+    .CustomFileInput:active {
+      outline: 0;
+    }
+    .CustomFileInput:active::before {
+      background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+    }
+  }
+  .btnContainer {
+    text-align: center;
+  }
+  .CheckboxContainer {
+    grid-template-columns: 30px 1fr;
+    display: grid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    a {
+      margin: 0 3px;
+      color: $kis-color-ekyc-title;
+    }
+    p {
+      align-self: center;
+      margin: 0;
+    }
+  }
+  .CheckBox {
+    span {
+      color: $kis-color-ekyc-title;
+    }
+  }
+}

@@ -1,0 +1,165 @@
+@import 'styles/variables.scss';
+
+.SettingsNav {
+  cursor: pointer;
+  display: flex;
+  width: 23px;
+  height: 24px;
+  padding: 3px;
+  border-radius: 5px;
+  transition: 0.4s;
+  &:hover {
+    background: #127ec4;
+    transition: 0.4s;
+  }
+  .SettingsDropdown {
+    max-width: 500px;
+    min-width: 388px;
+    inset: 0px auto auto -85px !important;
+    background-color: var(--color-dark__bg-module);
+    border: 1px solid var(--color-dark__title-module);
+    padding: 15px;
+    overflow: hidden;
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color: $color-blue-outline;
+    }
+    .arrow {
+      all: unset;
+      &::after {
+        content: none;
+      }
+      &::before {
+        content: none;
+      }
+    }
+    > div {
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      position: relative;
+      &::before {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: -50px;
+        width: 150%;
+        border-bottom: 1px solid var(--color-dark__title-module);
+      }
+      &:last-child:before {
+        border-bottom: none;
+      }
+      .InforTitle {
+        color: $color-light__text-yellow;
+      }
+      .InforRadio {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        input[type='checkbox'],
+        input[type='radio'] {
+          transform: scale(1.2);
+          &:checked + label.BidAsk {
+            outline: 2px solid $color-blue-outline;
+          }
+        }
+        input[type='radio']:after {
+          width: 15px;
+          height: 15px;
+          border-radius: 15px;
+          top: -2px;
+          left: -1px;
+          position: relative;
+          background-color: $color-dark__background-2;
+          content: '';
+          display: inline-block;
+          visibility: visible;
+          border: 2px solid $color-light__border;
+        }
+        input[type='radio']:checked:after {
+          width: 15px;
+          height: 15px;
+          border-radius: 15px;
+          top: -2px;
+          left: -1px;
+          position: relative;
+          background-color: $color-blue-outline;
+          content: '';
+          display: inline-block;
+          visibility: visible;
+          border: 2px solid $color-light__border;
+        }
+        p {
+          display: flex;
+          align-items: center;
+          margin: 0;
+          position: relative;
+        }
+        label {
+          margin-left: 10px;
+          font-size: 15px;
+          margin-bottom: 0;
+          &.BidAsk {
+            background: $color-dark__background-2;
+            width: 137px;
+            display: flex;
+            align-items: center;
+            height: 65px;
+            justify-content: space-around;
+            border: 5px solid $color-light__border;
+            p::before {
+              position: absolute;
+              content: '';
+              left: 0;
+              bottom: -5px;
+              width: 100%;
+              height: 3px;
+              background-color: $color-dark__green;
+            }
+            :nth-child(2)::before {
+              background-color: $color-dark__red;
+            }
+            &.AskBid {
+              :nth-child(1)::before {
+                background-color: $color-dark__red;
+              }
+              :nth-child(2)::before {
+                background-color: $color-dark__green;
+              }
+            }
+          }
+        }
+      }
+    }
+    > .ButtonSection {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      border-bottom: unset;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      > button {
+        width: 100px;
+        height: 34px;
+        border-radius: 3px;
+        color: $color-white;
+        text-align: center;
+        &[disabled] {
+          opacity: 0.5;
+        }
+      }
+      > .SubmitButton {
+        background-color: var(--color-yellow-logo-light);
+        margin-right: 10px;
+      }
+      > .CancelButton {
+        background: var(--color-dark__title-module);
+        color: $color-gray-4;
+      }
+    }
+  }
+}

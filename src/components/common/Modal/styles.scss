@@ -1,0 +1,37 @@
+@import 'styles/variables.scss';
+
+.Modal {
+  &.Blur {
+    background: rgba(10, 14, 21, 0.7);
+  }
+  > .ModalDialog {
+    justify-content: center;
+    > .modal-content {
+      background-color: var(--color-dark__bg-module);
+      border: 1px solid var(--color-dark__title-module);
+      border-radius: 5px;
+      > .ModalBody {
+        padding: 0;
+        border-radius: 5px;
+      }
+
+      > .CloseButton {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        background-color: $color-dark__separator;
+        border-radius: 50%;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        cursor: pointer;
+        border: 1px solid $color-gray-9;
+        z-index: 1;
+        > svg {
+          margin: auto;
+          color: var(--color-yellow-logo-light);
+        }
+      }
+    }
+  }
+}

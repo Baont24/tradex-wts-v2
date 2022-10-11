@@ -1,0 +1,60 @@
+@import 'styles/variables.scss';
+
+.CheckBox {
+  display: flex;
+  margin-left: auto;
+  position: relative;
+  cursor: pointer;
+  align-self: center;
+  width: 100%;
+  align-items: center;
+
+  &.Disabled {
+    opacity: 0.3;
+  }
+
+  & > input {
+    visibility: hidden;
+    width: 12px;
+    height: 12px;
+
+    &:checked + label:after {
+      opacity: 1;
+    }
+
+    &:checked + label {
+      background: var(--color-yellow-logo-light);
+      border-color: transparent;
+    }
+  }
+  & > span {
+    font-feature-settings: 'salt' on;
+    color: $color-white;
+    margin-left: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &Custom {
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    position: absolute;
+    background: transparent;
+    border-radius: 4px;
+    margin-bottom: 0;
+    border: 1.5px solid $color-light__gray-2;
+    &::after {
+      content: '';
+      width: 8px;
+      height: 5px;
+      position: absolute;
+      border: 1.5px solid $color-white;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}

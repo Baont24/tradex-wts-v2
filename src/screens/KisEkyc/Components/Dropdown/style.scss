@@ -1,0 +1,16 @@
+.EkycDropdown {
+  .Required {
+    color: red;
+  }
+  .input-group-text {
+    background-color: white !important;
+    border-left: 0px solid white !important;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+  .form-label {
+    color: #828282 !important;
+    font-weight: bold !important;
+    white-space: nowrap;
+  }
+}

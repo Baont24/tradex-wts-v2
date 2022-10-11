@@ -1,0 +1,58 @@
+@import 'styles/variables.scss';
+
+.PriceInput {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  > .OrderTypes {
+    position: absolute;
+    min-width: 100%;
+    top: calc(100% + 5px);
+    background-color: $color-dark__background;
+    border: 1px solid $color-dark__separator;
+    border-radius: 4px;
+    z-index: 10;
+    display: none;
+
+    &.Show {
+      display: block;
+    }
+
+    &.Top {
+      top: unset;
+      bottom: calc(100% + 5px);
+    }
+
+    > .OrderTypesItem {
+      cursor: pointer;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-dark__separator;
+      }
+      &:hover {
+        background-color: $color-dark__separator;
+        color: var(--color-yellow-logo-light);
+      }
+    }
+  }
+
+  > .OrderTypeText {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &.OrderTypeComponent {
+      right: 5px;
+    }
+  }
+  .SelectedItem {
+    background: var(--color-yellow-logo-light);
+  }
+}

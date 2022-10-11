@@ -1,0 +1,108 @@
+function onCommunicatorLoad(e) {
+  const origin = '###ORIGIN###';
+  const iframePath = '###IFRAME_PATH###';
+  let iframeSource = `${origin}/${iframePath}`;
+  let iframe = document.createElement('iframe');
+  iframe.setAttribute('src', iframeSource);
+  iframe.setAttribute('id', 'COMMUNICATORIFR');
+  e.target.appendChild(iframe);
+  if (origin === window.location.origin) {
+    return;
+  }
+  let lskeysToUse = ['["persist:root","selectedWatchlist","symbolList","stockList", "cwList", "indexList", "futuresList", "currentSymbol"]'];
+  let msgId = 0;
+  const callbackResults = {};
+  const communicatorWidow = document.getElementById('COMMUNICATORIFR').contentWindow;
+  lskeysToUse = JSON.parse(lskeysToUse[0]);
+  const onTimeOut = (msgId) => {
+    const cb = callbackResults[msgId];
+    if (cb != null) {
+      cb(new Error('TIME_OUT'));
+    }
+  };
+  const sendRequest = (request, callback, timeout = 2000) => {
+    callbackResults[msgId] = callback;
+    setTimeout(() => onTimeOut(msgId), timeout);
+    communicatorWidow.postMessage({...request, msgId: msgId}, origin);
+    msgId++;
+  };
+  const onMessage = (e) => {
+    console.log(e.origin, origin, );
+    if (e.origin === origin) {
+      if (e.data.msgId != null) {
+        const cb = callbackResults[e.data.msgId];
+        if (cb != null) {
+          cb(null, e.data.data);
+        }
+      }
+    }
+  };
+  window.addEventListener('message', onMessage);
+  window.setKey = (key, value) => {
+    console.log('setKey', key, lskeysToUse);
+    if (lskeysToUse.find(i => i === key) != null) {
+      return new Promise((resolve, reject) => {
+        sendRequest({
+          method: 'setItem',
+          param: {
+            key,
+            value,
+          }
+        }, (e, v) => {
+          if (e != null) {
+            reject(e);
+          } else {
+            resolve(v);
+          }
+        });
+      });
+    } else {
+      return Promise.resolve(window.localStorage.setItem(key, value));
+    }
+  };
+
+  window.getKey = (key) => {
+    console.log('getKey', key, lskeysToUse);
+    if (lskeysToUse.find(i => i === key) != null) {
+      console.log('getKey', 'use promise');
+      return new Promise((resolve, reject) => {
+        console.log('getKey', 'send request');
+        sendRequest({
+          method: 'getItem',
+          param: key
+        }, (e, v) => {
+          console.log('getKey', 'result', e, v);
+          if (e != null) {
+            reject(e);
+          } else {
+            resolve(v);
+          }
+        });
+      });
+    } else {
+      console.log('getKey', 'use local');
+      return Promise.resolve(window.localStorage.getItem(key));
+    }
+  };
+
+  window.removeKey = (key) => {
+    console.log('removeKey', key, lskeysToUse);
+    if (lskeysToUse.find(i => i === key) != null) {
+      return new Promise((resolve, reject) => {
+        sendRequest({
+          method: 'removeItem',
+          param: key
+        }, (e, v) => {
+          if (e != null) {
+            reject(e);
+          } else {
+            resolve(v);
+          }
+        });
+      });
+    } else {
+      return Promise.resolve(window.localStorage.removeItem(key));
+    }
+  };
+}
+

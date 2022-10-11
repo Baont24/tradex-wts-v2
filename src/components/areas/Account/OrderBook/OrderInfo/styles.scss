@@ -1,0 +1,76 @@
+@import 'styles/variables.scss';
+
+.OrderInfo {
+  background: rgba(10, 14, 21, 0.7);
+  > .OrderInfoDialog {
+    justify-content: center;
+    > .modal-content {
+      background-color: var(--color-dark__bg-module);
+      border: 1px solid var(--color-dark__title-module);
+      border-radius: 5px;
+
+      > .ModalBody {
+        padding: 15px 10px 10px 10px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+
+        > .OrderInfoTable {
+          margin-bottom: 10px;
+          > .OrderInfoTitle {
+            color: var(--color-yellow-logo-light);
+            font-size: 1.4rem !important;
+            margin-bottom: 10px;
+          }
+
+          > table {
+            width: 100%;
+            > tbody {
+              > tr {
+                > td {
+                  height: 24px;
+                  &:nth-child(2n + 1) {
+                    color: $color-gray-3;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        > .OrderLog {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          > .OrderLogTitle {
+            margin-bottom: 10px;
+            color: var(--color-yellow-logo-light);
+            font-size: 1.4rem !important;
+          }
+
+          > .OrderLogTable {
+            flex: 1;
+          }
+        }
+      }
+
+      > .CloseButton {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        background-color: $color-dark__separator;
+        border-radius: 50%;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        cursor: pointer;
+        border: 1px solid $color-gray-9;
+        z-index: 1;
+        > svg {
+          margin: auto;
+          color: var(--color-yellow-logo-light);
+        }
+      }
+    }
+  }
+}

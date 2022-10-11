@@ -1,0 +1,28 @@
+@import 'styles/variables.scss';
+
+.EkycPersonalInfo {
+  display: flex;
+  animation: backInRight 0.8s;
+  .Title {
+    font-weight: bold;
+    color: $kis-color-ekyc-gray-2;
+    font-size: 15px;
+  }
+  .FormLeft,
+  .FormRight {
+    flex: 1;
+    margin: 15px;
+    .input-group-text {
+      background-color: white !important;
+      border-left: 0px solid white !important;
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .EkycPersonalInfo {
+    display: block;
+  }
+}

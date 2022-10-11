@@ -1,0 +1,86 @@
+@import 'styles/variables.scss';
+
+.AlarmForm {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+  height: 100%;
+  > .FormTitle {
+    font-size: 1.4rem;
+    color: var(--color-yellow-logo-light);
+    font-family: $font-roboto-bold;
+    margin-bottom: 10px;
+  }
+  > .FormRow {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    &.MessageRow {
+      > .FormCell:first-child {
+        align-self: flex-start;
+      }
+    }
+
+    &.ConditionRow {
+      > .FormCell {
+        > div:first-child {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    > .FormCell {
+      display: flex;
+      height: 100%;
+      &:first-child {
+        flex: 1;
+        color: $color-gray-4;
+      }
+      &:last-child {
+        flex: 2;
+      }
+
+      > div {
+        flex: 1;
+      }
+
+      > .TextareaForm {
+        height: 41px;
+        resize: none;
+        background: $color-dark__background;
+        border: 1px solid $color-dark__separator;
+        width: 100%;
+        border-radius: 4px;
+        color: $color-white;
+        outline: none;
+        padding: 0 5px;
+      }
+    }
+  }
+  > .FormSubmit {
+    display: flex;
+    justify-content: space-between;
+    > .FormButton {
+      width: 135px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 3px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+      &.Cancel {
+        background-color: var(--color-dark__title-module);
+        border: 1px solid $color-dark__separator;
+        color: $color-gray-4;
+      }
+      &.Submit {
+        background-color: var(--color-yellow-logo-light);
+        color: $color-black;
+      }
+    }
+  }
+}

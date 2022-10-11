@@ -1,0 +1,28 @@
+@import 'styles/variables.scss';
+
+.LoanDetail {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  > .TabTable {
+    height: 100%;
+    border: none !important;
+    > .NavTab {
+      border: 1px solid #404040;
+      border-radius: 5px 5px 0 0;
+      border-bottom: none;
+    }
+    > .TabContent {
+      height: calc(100% - 30px);
+      .tab-pane {
+        height: 100%;
+        .TabTable {
+          border-radius: 0px 0px 4px 4px !important;
+          .TabContent {
+            height: calc(100% - 40px);
+          }
+        }
+      }
+    }
+  }
+}

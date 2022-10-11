@@ -1,0 +1,53 @@
+@import 'styles/variables.scss';
+
+.SendingAccount {
+  border: 1px solid $color-dark__separator;
+  border-radius: 4px;
+  .SendingAccountTitle {
+    background: var(--color-dark__title-module);
+    padding: 5px 10px;
+    border-bottom: 1px solid $color-dark__separator;
+
+    p {
+      margin: 0;
+    }
+  }
+  .SendingAccountContent {
+    height: 200px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--color-dark__bg-module);
+    .SendingAccountLeft,
+    .SendingAccountRight {
+      > div {
+        height: 26px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        p {
+          margin: 0;
+        }
+        p:first-child {
+          width: 130px;
+        }
+        p:nth-child(2) {
+          color: $color-gray-3;
+        }
+        .SendingAccountSVG {
+          color: var(--color-yellow-logo-light);
+          margin-left: 10px;
+        }
+      }
+      .SendingAccountDropdown {
+        height: 26px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+      }
+    }
+    .SendingAccountLeft {
+      padding-right: 15px;
+    }
+  }
+}

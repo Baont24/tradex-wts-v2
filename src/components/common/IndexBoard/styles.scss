@@ -1,0 +1,43 @@
+@import 'styles/variables.scss';
+
+.IndexBoard {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-dark__bg-module);
+  > .TabTable {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    > .TabContent {
+      height: 100%;
+      > .tab-pane {
+        height: 100%;
+        > .TabBoard {
+          flex: 1;
+          height: 100%;
+          @include agGridReact(
+            $height-row,
+            false,
+            $color-dark__line-sole-data-2,
+            false,
+            false,
+            false,
+            true
+          );
+          .Index {
+            text-align: left !important;
+          }
+          .TimeCell {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+              width: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

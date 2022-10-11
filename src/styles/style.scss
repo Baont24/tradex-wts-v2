@@ -1,0 +1,227 @@
+@import 'variables.scss';
+
+* {
+  font-size: $font-size;
+  scrollbar-color: $color-dark__hover-tab $color-dark__separator;
+  scrollbar-width: thin;
+  font-family: $font-roboto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-roboto;
+  background-color: $color-dark__background;
+  color: $color-white;
+}
+
+button,
+button:focus {
+  outline: none;
+  border: none;
+}
+
+#root *,
+.modal *,
+.popover * {
+  font-size: 1.2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+a {
+  color: $color-white;
+  &:hover {
+    text-decoration: none;
+    color: $color-white;
+  }
+}
+
+input:focus {
+  box-shadow: none !important;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: $color-gray-2;
+}
+
+.Ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Up {
+  color: $color-dark__green;
+  &.ag-cell-data-changed {
+    background-color: $color-dark__green !important;
+  }
+}
+
+.Down {
+  color: $color-dark__red;
+  &.ag-cell-data-changed {
+    background-color: $color-dark__red !important;
+    color: $color-white !important;
+  }
+}
+
+.Ref {
+  color: $color-dark__yellow;
+  &.ag-cell-data-changed {
+    background-color: $color-dark__yellow !important;
+  }
+}
+
+.Ceil {
+  color: $color-dark__purple;
+  &.ag-cell-data-changed {
+    background-color: $color-dark__purple !important;
+  }
+}
+
+.Floor {
+  color: $color-dark__teal;
+  &.ag-cell-data-changed {
+    background-color: $color-dark__teal !important;
+  }
+}
+
+.Default {
+  color: $color-white !important;
+
+  &.ag-cell-data-changed {
+    color: $color-black !important;
+    background-color: $color-white !important;
+  }
+}
+
+.NotAvailable {
+  color: rgba($color: $color-white, $alpha: 0.5);
+}
+
+.Steady {
+  color: $color-white;
+}
+
+.ag-cell-data-changed {
+  color: $color-black !important;
+  background-color: $color-white !important;
+}
+
+.ag-cell-data-changed-animation {
+  transition-duration: 0s;
+}
+
+.Toastify {
+  > .Toastify__toast-container {
+    > .Toastify__toast {
+      background-color: $color-white;
+      color: $color-light__text-black;
+      border-radius: 3px;
+      > .Toastify__close-button {
+        width: 14px;
+        height: 14px;
+        background-color: rgba($color: $color-dark__separator, $alpha: 0.3);
+        color: rgba($color: $color-black, $alpha: 0.8);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: normal;
+      }
+      > .Toastify__progress-bar {
+        background-color: rgba($color: $color-dark__separator, $alpha: 0.3);
+      }
+    }
+  }
+}
+
+.Header,
+.GroupHeader,
+.Cell {
+  visibility: visible;
+}
+
+.Popover {
+  background-color: var(--color-dark__bg-module);
+  border: 1px solid $color-dark__separator;
+  border-radius: 3px;
+  .arrow {
+    &::before {
+      border-bottom-color: $color-dark__separator;
+    }
+    &::after {
+      border-bottom-color: var(--color-dark__bg-module);
+    }
+  }
+}
+
+.LineClamp {
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.QueryButton {
+  min-width: 55px;
+  width: max-content;
+  border-radius: 3px;
+  height: 24px;
+  background: var(--color-yellow-logo-light);
+  color: $color-black;
+}
+
+.DarkButton {
+  min-width: 55px;
+  border-radius: 3px;
+  height: 24px;
+  background: var(--color-dark__title-module);
+  color: $color-gray-4;
+}
+
+.SuppressRowDrag {
+  .ag-row-hover {
+    .ag-icon-menu {
+      display: none !important;
+    }
+  }
+  .ag-row-drag {
+    display: none !important;
+    &.ag-hidden {
+      display: none !important;
+    }
+  }
+}
+
+.AllowRowDrag {
+  .ag-row-hover {
+    .ag-icon-menu {
+      display: inline-block !important;
+    }
+  }
+  .ag-row-drag {
+    &.ag-hidden {
+      display: block !important;
+    }
+  }
+}

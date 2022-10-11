@@ -1,0 +1,44 @@
+@import 'styles/variables.scss';
+
+.Board {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+  > .BoardSection {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .SuppressRowDrag {
+    .ag-row-hover {
+      .ag-icon-menu {
+        display: none !important;
+      }
+    }
+    .ag-row-drag {
+      display: none !important;
+      &.ag-hidden {
+        display: none !important;
+      }
+    }
+  }
+
+  .AllowRowDrag {
+    .ag-row-hover {
+      .ag-icon-menu {
+        display: inline-block !important;
+      }
+    }
+    .ag-row-drag {
+      &.ag-hidden {
+        display: block !important;
+      }
+    }
+  }
+}

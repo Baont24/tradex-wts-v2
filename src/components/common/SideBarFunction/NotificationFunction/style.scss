@@ -1,0 +1,24 @@
+@import 'styles/variables.scss';
+
+.NotificationFunction {
+  position: relative;
+  height: 100%;
+  .NotificationFunctionFooter {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-dark__title-module);
+    height: 30px;
+    p {
+      color: var(--color-yellow-logo-light);
+      margin: 0;
+    }
+    p:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import 'styles/variables.scss';
+
+.PositionStatement {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  > .TabTable {
+    display: flex;
+    flex-direction: column;
+
+    > .TabContent {
+      flex: 1;
+      display: flex;
+
+      > .tab-pane {
+        flex: 1;
+
+        > .PositionStatementTab {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+
+          > .PositionStatementFilter {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+
+            > .AccountDropdown {
+              width: 150px;
+              height: 24px;
+              margin-right: 20px;
+            }
+
+            > span {
+              margin-right: 5px;
+            }
+            .PositionStatementQuery {
+              margin-left: 20px;
+            }
+          }
+          > .PositionStatementBoard {
+            flex: 1;
+            > .SheetData {
+              .ag-root {
+                border: none !important;
+                border-radius: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

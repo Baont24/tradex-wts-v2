@@ -1,0 +1,126 @@
+@import 'styles/variables.scss';
+
+.Portfolio {
+  height: 100%;
+  width: 100%;
+
+  .ag-theme-balham-dark {
+    .ag-ltr {
+      .ag-has-focus {
+        .ag-cell-focus:not(.ag-cell-range-selected) {
+          border: 1px solid #00b0ff;
+          outline: initial;
+        }
+      }
+    }
+  }
+
+  > .TabTable {
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+
+    > .TabContent {
+      flex: 1;
+      display: flex;
+
+      > .tab-pane {
+        flex: 1;
+
+        > .TabBoard {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+
+          > .TabAccount {
+            color: $color-gray-4;
+            margin: 5px auto 20px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            > .ButtonCreateWatchlist {
+              background-color: var(--color-blue-2);
+              height: 32px;
+              min-width: 160px;
+              padding: 0 10px;
+              border-radius: 4px;
+              color: $color-white;
+              font-weight: 400;
+              font-size: 12px;
+              margin-right: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+              padding-left: 3px;
+              > .Icon {
+                width: 16.7px;
+                height: 16.7px;
+                transform: rotate(45deg);
+                margin-right: 5px;
+              }
+            }
+            table > thead > tr {
+              th {
+                padding-left: 40px;
+                &:first-child {
+                  padding-left: 0;
+                }
+              }
+            }
+            table > tbody > tr {
+              .Default {
+                color: $color-gray-4 !important;
+              }
+              > td {
+                padding-left: 40px;
+                &:first-child {
+                  width: 250px;
+                  padding-left: 0;
+                }
+              }
+            }
+          }
+          .TabAccountMini {
+            > div {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              padding: 2px 8px;
+              p {
+                margin: 0;
+              }
+              p:last-child {
+                text-align: right;
+              }
+            }
+          }
+
+          .PortfolioData {
+            flex: 1;
+            .ag-root {
+              border: none !important;
+              border-radius: 0;
+              .ag-row {
+                .Cell {
+                  &:last-child {
+                    border-right: 1px solid $color-dark__separator;
+                  }
+                }
+                .Cell.text-center {
+                  cursor: pointer;
+                }
+                .alignRight {
+                  text-align: end;
+                  padding-right: 15px;
+                }
+                .hideBtn button {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

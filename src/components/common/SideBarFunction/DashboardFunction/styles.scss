@@ -1,0 +1,41 @@
+@import 'styles/variables.scss';
+
+.DashboardFunction {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .DashboardItem {
+    flex: 1;
+    width: 100%;
+    min-height: 250px;
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-dark__separator;
+    }
+
+    &.Collapse {
+      height: 30px;
+      min-height: 30px;
+      flex: initial;
+    }
+
+    .CollapseButton {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background-color: $color-dark__background;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      color: $color-gray-4;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 4px;
+  }
+}

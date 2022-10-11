@@ -1,0 +1,59 @@
+@import 'styles/variables.scss';
+
+.LoanContract {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  .LoanContractData {
+    height: 100%;
+    .SheetData {
+      height: calc(100% - 43px);
+    }
+    .ag-root {
+      border-radius: 0 0 4px 4px;
+      border-left: none !important;
+      border-right: none !important;
+    }
+    .LoanContractFilter {
+      display: flex;
+      padding: 10px;
+      background-color: var(--color-dark__bg-module);
+      border-bottom: none;
+      border-top: none;
+      > div {
+        margin-right: 30px;
+        display: flex;
+        align-items: center;
+        p {
+          width: max-content;
+          margin: 0;
+          margin-right: 5px;
+        }
+      }
+      .LoanContractAccount {
+        p {
+          width: 110px;
+        }
+        width: 200px;
+        height: 24px;
+      }
+      .LoanContractDate {
+        width: 300px;
+        height: 24px;
+      }
+      .LoanContractType {
+        p {
+          width: 140px;
+        }
+      }
+    }
+  }
+}
+
+.LoanContractModal {
+  height: 200px;
+  padding: 10px;
+  .SheetData {
+    height: 152px;
+  }
+}

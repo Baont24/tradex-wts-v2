@@ -1,0 +1,32 @@
+@import 'styles/variables.scss';
+
+.PortfolioMini {
+  height: 100%;
+  position: relative;
+  .TabContent {
+    .NavTab {
+      display: none !important;
+    }
+  }
+
+  .PortfolioButton {
+    display: flex;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    align-items: center;
+    div {
+      cursor: pointer;
+      margin-right: 5px;
+      background: var(--color-dark__bg-module);
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      border-radius: 3px;
+    }
+  }
+  .ag-header-row {
+    height: 25.5px !important;
+    margin-top: 0 !important;
+  }
+}

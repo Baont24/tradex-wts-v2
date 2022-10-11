@@ -1,0 +1,63 @@
+.EkycForeignInvestor {
+  display: flex;
+  .ForeignText {
+    flex: 1;
+    padding: 10px;
+  }
+  .PhotoPicker {
+    flex: 1;
+    height: 250px;
+    background: #e9f3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .InputContainer {
+      text-align: center;
+    }
+    .Note {
+      text-align: center;
+      margin: 0;
+    }
+    .WarningNote {
+      text-align: center;
+      margin: 0;
+
+      color: red;
+    }
+    .CustomFileInput {
+      color: transparent;
+      width: 35px;
+      height: 35px;
+    }
+    .CustomFileInput::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+    .CustomFileInput::before {
+      content: '+';
+      justify-content: center;
+      align-items: center;
+      color: #2569b0;
+      display: flex;
+      width: 35px;
+      height: 35px;
+      background: transparent;
+      border: 1px solid #2569b0;
+      border-radius: 50%;
+      outline: none;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 16pt;
+    }
+    .CustomFileInput:hover::before {
+      border-color: black;
+    }
+    .CustomFileInput:active {
+      outline: 0;
+    }
+    .CustomFileInput:active::before {
+      background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+    }
+  }
+}

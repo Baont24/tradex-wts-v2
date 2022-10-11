@@ -1,0 +1,114 @@
+@import 'styles/variables.scss';
+
+.TabAssetInformationDer {
+  p {
+    margin: 0;
+  }
+  .TableDerivatives {
+    border: 1px solid $color-gray-2;
+    border-radius: 5px;
+    border-bottom: none;
+    > p {
+      color: var(--color-yellow-logo-light);
+      border-radius: 5px 5px 0 0;
+      font-weight: 800;
+      padding: 8px 0px 8px 12px;
+      background-color: var(--color-dark__title-module);
+      border-bottom: 1px solid $color-gray-2;
+    }
+    .body {
+      display: flex;
+      > p {
+        flex: 1;
+        padding: 6.3px 12px;
+        background-color: var(--color-dark__bg-module);
+        border-bottom: 1px solid $color-gray-2;
+        border-right: 1px solid $color-gray-2;
+        &.OnBold {
+          font-weight: bold;
+        }
+      }
+      > p:last-child {
+        border-right: none;
+      }
+    }
+    div.body:last-child {
+      p:first-child {
+        border-radius: 0 0 0 5px;
+      }
+      p:last-child {
+        border-radius: 0 0 5px 0;
+      }
+    }
+    &.Summary {
+      .body p:nth-child(even) {
+        text-align: right;
+      }
+    }
+    &.Porfolio {
+      .body p {
+        text-align: right;
+      }
+      .body {
+        > p:first-child {
+          text-align: left;
+        }
+      }
+      div.body:nth-child(2) p {
+        text-align: center;
+      }
+      div.body:nth-child(3) {
+        p:first-child {
+          flex: 1;
+          padding-right: 0;
+        }
+        p:last-child {
+          flex: 2;
+          text-align: center;
+        }
+      }
+    }
+    &.Cash {
+      .body p {
+        text-align: right;
+      }
+      .body {
+        > p:first-child {
+          text-align: left;
+        }
+      }
+      div.body:nth-child(2) p {
+        text-align: center;
+      }
+    }
+    &.CashBarSectionMini {
+      border: none;
+      .body {
+        > p {
+          padding: 6.3px 0px;
+          text-align: right;
+          padding-right: 5px;
+        }
+        > p:first-child {
+          text-align: left;
+          padding-left: 5px;
+          padding-right: 0px;
+        }
+      }
+      .body:nth-child(8) p:first-child {
+        text-indent: 20px;
+      }
+      .body:nth-child(9) p:first-child {
+        text-indent: 20px;
+      }
+      div.body:last-child {
+        p:first-child {
+          border-radius: 0px;
+        }
+        p:last-child {
+          border-radius: 0px;
+        }
+      }
+    }
+  }
+}

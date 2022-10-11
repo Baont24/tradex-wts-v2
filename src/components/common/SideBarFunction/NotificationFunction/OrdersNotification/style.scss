@@ -1,0 +1,42 @@
+@import 'styles/variables.scss';
+
+.ListOrderNotification {
+  .OrderNotification {
+    padding: 8px;
+    border-bottom: 1px solid $color-dark__separator;
+    position: relative;
+    .OrderInfo {
+      display: flex;
+      .NotificationIcon {
+        border-radius: 50%;
+        width: 18px;
+        height: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.Placed {
+          background: $color-green-1;
+        }
+        &.Failed {
+          background: $color-dark__red;
+        }
+        &.Matched {
+          background: $color-blue-1;
+        }
+      }
+      .OrderNotiTitle {
+        margin-left: 10px;
+      }
+      .OrderNotiTime {
+        position: absolute;
+        right: 0;
+        padding-right: 8px;
+        color: $color-gray-3;
+      }
+    }
+
+    .OrderNotiContent {
+      margin: 0;
+    }
+  }
+}

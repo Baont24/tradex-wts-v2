@@ -1,0 +1,23 @@
+@import 'styles/variables.scss';
+
+.InformationTable {
+  display: block;
+  width: 400px;
+  border: 1px solid $color-gray-3;
+  border-radius: 5px;
+  padding: 12px 9px;
+
+  .InformationTableRow {
+    margin: 8px;
+    p {
+      width: 200px;
+    }
+    display: flex;
+  }
+  .InformationTableRowTitle {
+    color: $color-gray-3;
+  }
+}
+.NoBorder {
+  border: none !important;
+}

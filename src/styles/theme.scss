@@ -1,0 +1,35 @@
+body {
+  &.mas {
+    --color-dark__title-module: #2d2d2d;
+    --color-dark__bg-module: #15171b;
+    --color-yellow-logo: #f08300;
+    --color-yellow-logo-light: #ff920f;
+    --color-blue-2: #2d9cdb;
+    --color-board-header__highlight: rgba(255, 255, 255, 0.05);
+    --color-board__highlight: rgba(255, 255, 255, 0.1);
+    --color-boder-input: #0a0e15;
+  }
+
+  &.vcsc {
+    --color-dark__title-module: #1e2434;
+    --color-dark__bg-module: #161a26;
+    --color-yellow-logo: #2569b0;
+    --color-yellow-logo-light: #e44542;
+    --color-blue-2: #2569b0;
+    --color-board-header__highlight: #262a37;
+    --color-board__highlight: #262a37;
+    --color-Indexslider__highlight: #ff8821;
+    --color-boder-input: #0a0e15;
+  }
+
+  &.kis {
+    --color-dark__title-module: #1e2434;
+    --color-dark__bg-module: #0a0e15;
+    --color-yellow-logo: #659ad2;
+    --color-yellow-logo-light: #659ad2;
+    --color-blue-2: #2569b0;
+    --color-board-header__highlight: #262a37;
+    --color-board__highlight: #262a37;
+    --color-boder-input: #2d2d2d;
+  }
+}

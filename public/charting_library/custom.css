@@ -1,0 +1,33 @@
+.tv-market-status--market--for-chart {
+  display: block;
+}
+
+html.theme-dark .chart-container,
+html.theme-dark .chart-controls-bar,
+html.theme-dark .toolbar-2MJefnwP-,
+html.theme-dark .group-wWM3zP_M-,
+html.theme-dark .fill-1djIbBXv- {
+  background-color: black;
+}
+
+html.theme-dark .group-2JyOhh7Z-,
+html.theme-dark .drawingToolbar-U3_QXRof- {
+  background-color: #0b0e18;
+}
+
+html.theme-dark .sb-inner-shadow {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.theme-dark .toolbar-2n2cwgp5- {
+  padding: 0;
+}
+
+html.theme-dark .wrap-3tiHesTk- > div {
+  border-radius: 0;
+}
+
+html.theme-dark .layout__area--center .chart-container {
+  border-color: transparent;
+}

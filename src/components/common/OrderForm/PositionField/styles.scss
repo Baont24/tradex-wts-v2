@@ -1,0 +1,54 @@
+@import 'styles/variables.scss';
+
+.PositionField {
+  width: 100%;
+  text-align: center;
+  tr.Row {
+    height: 26px;
+    > .Cell {
+      position: relative;
+      border: 1px solid $color-dark__separator;
+    }
+    > .CellTitle {
+      position: relative;
+    }
+    > .CellBuy {
+      position: relative;
+      background-color: $color-dark__green-button;
+    }
+    > .CellBuyValue {
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--color-dark__title-module);
+      }
+    }
+    > .CellSell {
+      position: relative;
+      background-color: $color-dark__red-button;
+    }
+    > .CellSellValue {
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--color-dark__title-module);
+      }
+    }
+    > .CellClose {
+      position: relative;
+      background-color: $color-dark__red-button;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    > .CellReverse {
+      position: relative;
+      background-color: var(--color-yellow-logo);
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

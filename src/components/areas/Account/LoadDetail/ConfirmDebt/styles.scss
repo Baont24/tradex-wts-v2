@@ -1,0 +1,108 @@
+@import 'styles/variables.scss';
+
+.ConfirmDebt {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .ConfirmDebtData {
+    height: 240px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .ag-root {
+      border-radius: 0 0 4px 4px;
+      border-left: none !important;
+      border-right: none !important;
+    }
+  }
+  .DebtMarginContainer {
+    margin: 5px;
+    .ag-body-horizontal-scroll-container {
+      all: unset;
+    }
+  }
+
+  .CustomerInformation {
+    width: 100%;
+    padding: 5px 5px 5px 2px;
+
+    .TabContent {
+      overflow: hidden;
+    }
+
+    .InformationTableRow {
+      margin: 8px;
+      p {
+        width: 200px;
+      }
+      display: flex;
+    }
+
+    .InformationTableRowTitle {
+      color: $color-gray-3;
+    }
+  }
+  .ButtonContainer {
+    margin-left: 10px;
+    .QueryButton {
+      cursor: pointer;
+      &[disabled] {
+        opacity: 0.5;
+      }
+    }
+  }
+  p {
+    margin-left: 10px;
+  }
+  .DebtConfirmationHistoryContainer {
+    display: block;
+    height: 100%;
+    .TabContent {
+      .tab-pane {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 220px;
+        .SheetData {
+          height: calc(100% - 43px);
+        }
+        .ConfirmDebtFilter {
+          display: flex;
+          padding: 10px;
+          background-color: var(--color-dark__bg-module);
+          border-bottom: none;
+          border-top: none;
+          > div {
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+            p {
+              width: max-content;
+              margin: 0;
+              margin-right: 5px;
+            }
+          }
+          .ConfirmDebtAccount {
+            p {
+              width: 110px;
+            }
+            width: 200px;
+            height: 24px;
+          }
+          .ConfirmDebtDate {
+            width: 162px;
+            height: 24px;
+            .react-datepicker__month .react-datepicker__month-text,
+            .react-datepicker__month .react-datepicker__quarter-text {
+              width: 5.5rem;
+            }
+          }
+          .ConfirmDebtType {
+            p {
+              width: 140px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

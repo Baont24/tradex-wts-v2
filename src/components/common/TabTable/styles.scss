@@ -1,0 +1,86 @@
+@import 'styles/variables.scss';
+
+.TabTable {
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  > .NavTab {
+    background-color: var(--color-dark__title-module);
+    height: 26px;
+    border-bottom: 1px solid $color-dark__separator;
+    padding: 0 5px 0 15px;
+    width: 100%;
+    display: flex;
+
+    > .DetailButton {
+      border-radius: 3px;
+      cursor: pointer;
+      display: flex;
+      align-self: center;
+      margin-left: auto;
+      &:hover {
+        color: var(--color-yellow-logo);
+      }
+    }
+
+    > .nav-item {
+      margin-bottom: 0;
+      margin-right: 10px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: fit-content;
+
+      > .ActiveTab {
+        align-self: center;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        border-radius: 3px 3px 0 0;
+      }
+
+      > .nav-link {
+        padding: 0;
+        background-color: transparent;
+        color: $color-gray-3;
+        border: none;
+        height: 100%;
+        border-top: 3px solid transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.active ~ .ActiveTab {
+          background-color: var(--color-yellow-logo);
+        }
+      }
+      .active {
+        color: $color-white;
+      }
+    }
+  }
+  > .SimpleNavBar {
+    background-color: var(--color-dark__bg-module);
+    border-bottom: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    > .nav-link {
+      &.active ~ .ActiveTab {
+        background-color: var(--color-dark__bg-module) !important;
+      }
+    }
+    .active {
+      color: var(--color-yellow-logo) !important;
+    }
+  }
+  > .TabContent {
+    opacity: 1;
+    flex: 1;
+    > .tab-pane {
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import 'styles/variables.scss';
+
+table.AlarmHistoryTable {
+  background-color: var(--color-dark__bg-module);
+  > thead {
+    text-align: center;
+    background-color: rgba($color: var(--color-dark__title-module), $alpha: 0.5);
+  }
+  > tbody {
+    tr {
+      td.SymbolCol {
+        text-align: center;
+      }
+      &.SelectedRow {
+        background-color: rgba($color: var(--color-yellow-logo), $alpha: 0.5);
+      }
+    }
+  }
+}

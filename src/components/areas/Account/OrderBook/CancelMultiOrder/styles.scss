@@ -1,0 +1,33 @@
+@import 'styles/variables.scss';
+
+.OtpModalDialog {
+  .CancelMultiOrderModal {
+    padding: 10px !important;
+    .Title {
+      color: var(--color-yellow-logo-light);
+      font-size: 1.4rem !important;
+      margin-bottom: 10px;
+    }
+    .OrderTable {
+      max-height: 260px;
+      overflow: auto;
+      > table {
+        width: 100%;
+        border-radius: 4px;
+        tr {
+          text-align: center;
+          > th,
+          > td {
+            height: 26px;
+            border: 1px solid $color-dark__separator;
+          }
+
+          > th {
+            background-color: rgba($color: var(--color-dark__title-module), $alpha: 0.5);
+            color: $color-gray-4;
+          }
+        }
+      }
+    }
+  }
+}

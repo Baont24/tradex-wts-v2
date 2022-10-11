@@ -1,0 +1,27 @@
+@import 'styles/variables.scss';
+
+.CashTransferNote {
+  display: flex;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 4px;
+  align-items: center;
+  .accordion {
+    width: 100%;
+    .card {
+      background: var(--color-dark__bg-module);
+      border-radius: 4px;
+      border: 1px solid $color-dark__separator;
+
+      button {
+        background: var(--color-dark__bg-module);
+        color: $color-white;
+        width: 100%;
+        text-align: left;
+        svg {
+          float: right;
+        }
+      }
+    }
+  }
+}

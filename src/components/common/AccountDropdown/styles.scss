@@ -1,0 +1,21 @@
+@import 'styles/variables.scss';
+
+.AccountDropdown {
+  width: 100%;
+  height: 100%;
+
+  &.AccountDropdownForm {
+    border: 1px solid $color-dark__separator;
+    border-radius: 4px;
+  }
+
+  > .Dropdown {
+    > .DropdownToggle {
+      opacity: 1;
+    }
+    > .DropdownMenu {
+      width: 100%;
+      border: 1px solid $color-dark__separator;
+    }
+  }
+}

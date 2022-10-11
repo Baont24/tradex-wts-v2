@@ -1,0 +1,131 @@
+@import 'styles/variables.scss';
+
+.QuantityInput {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+
+  &.Right {
+    > .QuantityList {
+      right: 0;
+    }
+  }
+
+  > .NumericInput {
+    flex: 1;
+    > #NumericInputTooltip {
+      > .arrow::before {
+        border-top-color: $color-white;
+      }
+      > .tooltip-inner {
+        background-color: $color-white;
+        color: $color-black;
+        max-width: 100%;
+      }
+    }
+  }
+
+  > .QuantityButton {
+    width: 26px;
+    height: 100%;
+    background-color: $color-dark__separator;
+    border-radius: 0px 4px 4px 0px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  > .QuantityFunction {
+    background-color: $color-dark__separator;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    margin-left: 3px;
+    cursor: pointer;
+    &:hover {
+      color: var(--color-yellow-logo-light);
+    }
+    .QuantityTooltip {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  > .QuantityList {
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    top: calc(100% + 5px);
+    background-color: $color-dark__background;
+    border: 1px solid $color-dark__separator;
+    border-radius: 4px;
+    z-index: 10;
+    min-width: 100%;
+    &.Show {
+      display: block;
+    }
+
+    > table {
+      width: 100%;
+      text-align: center;
+      tr {
+        height: 24px;
+        td {
+          border: 1px solid $color-dark__separator;
+          cursor: pointer;
+          font-size: 1.1rem !important;
+          &:hover {
+            background-color: $color-dark__separator;
+          }
+
+          &:first-child {
+            border-left: 0;
+          }
+
+          &:last-child {
+            border-right: 0;
+          }
+        }
+
+        &:first-child td {
+          border-top: 0;
+        }
+
+        &:last-child td {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+  .SelectedItem {
+    background: var(--color-yellow-logo-light);
+  }
+}
+
+#QuantityPopover {
+  display: flex;
+  min-width: 140px;
+  max-width: 300px;
+  border-radius: 3px;
+  color: $color-black;
+  background-color: $color-gray-6;
+  padding: 5px;
+}
+#QuantityBgColor > .tooltip-inner {
+  color: $color-black;
+  background-color: $color-white;
+  padding: 4px 5px;
+}
+.bs-tooltip-auto[x-placement^='top'] .arrow::before,
+.bs-tooltip-top .arrow::before {
+  border-top-color: $color-white;
+}

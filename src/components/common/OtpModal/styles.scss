@@ -1,0 +1,106 @@
+@import 'styles/variables.scss';
+
+.OtpModal {
+  background: rgba(10, 14, 21, 0.7);
+  > .OtpModalDialog {
+    justify-content: center;
+    > .modal-content {
+      background-color: var(--color-dark__bg-module);
+      border: 1px solid var(--color-dark__title-module);
+      border-radius: 5px;
+      > .ModalBody {
+        padding: 0;
+        border-radius: 5px;
+
+        > .ButtonSection {
+          padding: 10px;
+          display: flex;
+          justify-content: flex-end;
+          > button {
+            width: 80px;
+            height: 24px;
+            border-radius: 3px;
+            color: $color-white;
+            text-align: center;
+            &[disabled] {
+              opacity: 0.5;
+            }
+          }
+          > .SubmitButton {
+            background-color: var(--color-yellow-logo-light);
+            margin-right: 10px;
+          }
+          > .CancelButton {
+            background: var(--color-dark__title-module);
+            border: 1px solid $color-dark__separator;
+            color: $color-gray-4;
+          }
+        }
+
+        &.HideContent {
+          .OtpForm {
+            padding: 10px;
+            > .ButtonSection {
+              > .ButtonSectionSubmitCancel {
+                > .SubmitButton {
+                  margin-right: 10px;
+                  &[disabled] {
+                    background: var(--color-dark__title-module);
+                    border: 1px solid $color-dark__separator;
+                    color: $color-gray-4;
+                  }
+                }
+                > .CancelButton {
+                  color: $color-gray-4;
+                }
+              }
+            }
+          }
+        }
+
+        &.Horizontal {
+          .FormSection {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            > .MatrixInputs,
+            > .OtpInputs {
+              > label {
+                margin-right: 10px;
+              }
+
+              > .input-group {
+                width: 70px;
+                margin-right: 10px;
+              }
+            }
+
+            > .InputExpiryTime {
+              > .CheckBox {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+
+      > .CloseButton {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        background-color: $color-dark__separator;
+        border-radius: 50%;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        cursor: pointer;
+        border: 1px solid $color-gray-9;
+        z-index: 1;
+        > svg {
+          margin: auto;
+          color: var(--color-yellow-logo-light);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import 'styles/variables.scss';
+
+.EditCell {
+  margin-top: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > .EditButton {
+    color: var(--color-yellow-logo-light);
+    width: 24px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 2px;
+    background: $color-light__text-black;
+    margin-right: 3px !important;
+    cursor: pointer;
+    &[disabled] {
+      color: $color-gray-4;
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  > .DeleteButton {
+    color: $color-dark__red;
+    width: 24px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 2px;
+    background: $color-light__text-black;
+    cursor: pointer;
+    &[disabled] {
+      color: $color-gray-4;
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  > .MarginLeft {
+    margin-left: 27px;
+  }
+}

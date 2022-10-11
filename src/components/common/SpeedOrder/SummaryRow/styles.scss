@@ -1,0 +1,32 @@
+@import 'styles/variables.scss';
+.SpeedOrder > .DataSection > .ContentData > .SummaryRow {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid $color-dark__separator;
+  background-color: var(--color-dark__title-module);
+  &.RowReverse {
+    flex-direction: row-reverse;
+  }
+
+  > .RowButton {
+    flex: 1;
+    &:not(:last-child) {
+      border-right: 1px solid $color-dark__separator;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  > .SummaryLabel {
+    flex: 3;
+    vertical-align: middle;
+    text-align: center;
+    height: 100%;
+    border-right: 1px solid $color-dark__separator;
+    line-height: 26px;
+  }
+}

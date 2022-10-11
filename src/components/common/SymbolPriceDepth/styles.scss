@@ -1,0 +1,50 @@
+@import 'styles/variables.scss';
+
+.SymbolPriceDepth {
+  .Cell {
+    background-color: $color-gray-9;
+    border-bottom: 1px solid $color-dark__separator;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    &:not(:last-child) {
+      border-right: 1px solid $color-dark__separator;
+    }
+  }
+
+  .Header {
+    .ag-header-cell-label,
+    .ag-header-group-cell-label {
+      justify-content: center;
+    }
+  }
+
+  .ag-header-row[aria-rowindex='2'] {
+    .Cell {
+      background-color: var(--color-dark__title-module);
+      border-bottom: none;
+    }
+  }
+
+  .ag-floating-bottom {
+    .ag-row {
+      height: 100% !important;
+
+      .Cell {
+        background-color: var(--color-dark__title-module);
+        border-bottom: none;
+
+        &[col-id^='v'],
+        &[col-id='p2'] {
+          border-right: none;
+        }
+
+        &[col-id='p1'] {
+          border-right: 1px solid $color-dark__separator;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+@import 'styles/variables.scss';
+
+.RightSubscriptions {
+  position: relative;
+  height: calc(100% - 48px);
+  width: 100%;
+  .RightSubsFilter {
+    display: flex;
+    padding: 10px;
+    border: 1px solid $color-dark__separator;
+    background-color: var(--color-dark__bg-module);
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    > div {
+      margin-right: 30px;
+      display: flex;
+      align-items: center;
+      p {
+        width: max-content;
+        margin: 0;
+        margin-right: 5px;
+      }
+    }
+    .RightSubsAccount {
+      p {
+        width: 110px;
+      }
+      width: 200px;
+      .AccountDropdown {
+        height: 24px;
+      }
+    }
+    .RightSubsStockSymbol {
+      p {
+        width: 80px;
+      }
+      .RightSubsSymbolPicker {
+        width: 125px;
+        color: $color-white;
+        > .SearchSymbol {
+          > .Select {
+            > .Select-control {
+              height: 24px;
+              border: 1px solid;
+              > .Select-multi-value-wrapper {
+                height: 24px;
+                color: $color-white;
+                > .Select-placeholder {
+                  color: $color-gray-4;
+                }
+                .Select-input {
+                  height: 24px;
+                  max-width: 100px;
+                  > input {
+                    height: 24px;
+                  }
+                }
+              }
+            }
+            > .Select-menu-outer {
+              left: unset;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+    .RightSubsDropdownStatus {
+      width: 150px;
+      ::-webkit-scrollbar-track {
+        background: $color-dark__background;
+      }
+      .DropdownMenu {
+        max-height: 300px;
+        overflow: auto;
+      }
+    }
+    .RightSubsDate {
+      width: 300px;
+    }
+    .RightSubsQuery {
+      width: auto;
+    }
+  }
+  .SheetData {
+    border-radius: 0 0 4px 4px;
+    .ag-root .ag-row {
+      .alignCenter {
+        text-align: center;
+      }
+      .alignEnd {
+        text-align: left;
+      }
+    }
+  }
+}

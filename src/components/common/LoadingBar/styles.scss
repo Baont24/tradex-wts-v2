@@ -1,0 +1,57 @@
+@import 'styles/variables.scss';
+
+.LoadingBar {
+  .Logo {
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .Slider {
+    position: absolute;
+    height: 5px;
+    overflow-x: hidden;
+  }
+
+  .Line {
+    position: absolute;
+    opacity: 0.4;
+    background: var(--color-yellow-logo);
+    width: 150%;
+    height: 5px;
+  }
+
+  .Subline {
+    position: absolute;
+    background: var(--color-yellow-logo);
+    height: 5px;
+  }
+  .Inc {
+    animation: increase 2s infinite;
+  }
+  .Dec {
+    animation: decrease 2s 0.5s infinite;
+  }
+
+  @keyframes increase {
+    from {
+      left: -5%;
+      width: 5%;
+    }
+    to {
+      left: 130%;
+      width: 100%;
+    }
+  }
+  @keyframes decrease {
+    from {
+      left: -80%;
+      width: 80%;
+    }
+    to {
+      left: 110%;
+      width: 10%;
+    }
+  }
+}

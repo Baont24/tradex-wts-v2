@@ -1,0 +1,64 @@
+@import 'styles/variables.scss';
+.CancelBtnCell {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  button {
+    font-size: 10px !important;
+    min-width: 55px;
+    background: $color-dark__red-button;
+    color: $color-white;
+    border-radius: 3px;
+    align-self: center;
+    height: 20px;
+    line-height: 19px;
+  }
+}
+
+.CancelBtnModal {
+  table {
+    width: 100%;
+    tr td {
+      padding: 8px 0 5px 12px;
+    }
+    thead {
+      th {
+        font-size: 12px;
+        font-weight: 800;
+        padding: 8px 0px 5px 12px;
+        color: var(--color-yellow-logo-light);
+      }
+    }
+    tbody > tr > td:first-child {
+      width: 130px;
+    }
+    tbody > tr > td:last-child {
+      color: $color-gray-3;
+    }
+  }
+  .ButtonSection {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    > button {
+      width: 80px;
+      height: 24px;
+      border-radius: 3px;
+      color: $color-white;
+      text-align: center;
+      &[disabled] {
+        opacity: 0.5;
+      }
+    }
+    > .SubmitButton {
+      background-color: var(--color-yellow-logo-light);
+      margin-right: 10px;
+    }
+    > .CancelButton {
+      background: var(--color-dark__title-module);
+      border: 1px solid $color-dark__separator;
+      color: $color-gray-4;
+    }
+  }
+}

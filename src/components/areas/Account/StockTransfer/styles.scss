@@ -1,0 +1,208 @@
+@import 'styles/variables.scss';
+
+.StockTransfer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  > .TabTable {
+    border: none !important;
+    background-color: unset !important;
+    display: flex;
+    flex-direction: column;
+
+    > .NavTab {
+      border: 1px solid $color-dark__separator;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+    }
+
+    > .TabContent {
+      flex: 1;
+      display: flex;
+
+      > .tab-pane {
+        flex: 1;
+
+        > .StockTransferTab {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+
+          > .StockTransferFilter {
+            height: 44px;
+            display: flex;
+            padding: 10px;
+            border: 1px solid $color-dark__separator;
+            background-color: var(--color-dark__bg-module);
+            border-bottom: none;
+            border-top: none;
+            > .Left {
+              display: flex;
+              position: relative;
+              align-items: center;
+              > .Dropdown {
+                width: 150px;
+              }
+              > span {
+                margin-right: 5px;
+              }
+              > .AccountDropdown {
+                width: 150px;
+              }
+            }
+          }
+
+          > .StockTransferBoard {
+            flex: 1;
+            min-height: 200px;
+            > .SheetData,
+            .ag-root {
+              border-radius: 0 0 4px 4px;
+              .ag-header-select-all {
+                margin-right: 0;
+              }
+              .ag-cell-focus {
+                background-color: unset;
+              }
+              .ag-row-selected {
+                .ag-cell-not-inline-editing {
+                  .TransferVolumeCell {
+                    background-color: $color-dark__background;
+                    border: 1px solid $color-dark__separator;
+                    border-radius: 4px;
+                    height: 20px;
+                    padding: 0 10px;
+                    margin: 3px 5px;
+                    text-align: right;
+                    line-height: 19px;
+                    vertical-align: middle;
+                  }
+                }
+              }
+            }
+          }
+
+          > .StockTransferButton {
+            display: flex;
+            > .ConfirmButton {
+              height: 24px;
+              border-radius: 4px;
+              padding: 0 12px;
+              background-color: var(--color-yellow-logo-light);
+              margin: 10px 0 10px auto;
+              &[disabled] {
+                background-color: var(--color-dark__title-module);
+                border: 1px solid $color-dark__separator;
+                color: $color-gray-4;
+                width: max-content;
+                min-width: 50px;
+                padding: 0 12px;
+              }
+            }
+          }
+
+          > .StockTransferHistoryTab {
+            height: 30px;
+            background-color: var(--color-dark__title-module);
+            border: 1px solid $color-dark__separator;
+            border-bottom: none;
+            border-radius: 4px 4px 0px 0px;
+            display: flex;
+            flex-direction: column;
+            padding: 0 10px;
+
+            > div {
+              width: fit-content;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              margin-top: 3px;
+              cursor: pointer;
+              > .ActiveTab {
+                align-self: center;
+                width: 100%;
+                height: 3px;
+                bottom: 0;
+                border-radius: 3px 3px 0 0;
+                background-color: var(--color-yellow-logo-light);
+              }
+            }
+          }
+
+          > .StockTransferHistoryFilter {
+            height: 44px;
+            display: flex;
+            padding: 10px;
+            border: 1px solid $color-dark__separator;
+            background-color: var(--color-dark__bg-module);
+            border-bottom: none;
+            border-top: none;
+            > .Left {
+              display: flex;
+              position: relative;
+              align-items: center;
+              > span {
+                margin-right: 5px;
+              }
+              > .SearchSymbol,
+              > .Dropdown,
+              .DatePicker {
+                width: 150px;
+                margin-right: 30px;
+              }
+            }
+          }
+
+          > .StockTransferHistoryBoard {
+            flex: 1;
+            min-height: 200px;
+            > .SheetData,
+            .ag-root {
+              border-radius: 0 0 4px 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.StockTransferConfirmDialog {
+  max-width: 400px;
+  .StockTransferConfirmModal {
+    > .StockTransferConfirm {
+      padding: 10px;
+      > .Title {
+        font-size: 1.4rem !important;
+        color: var(--color-yellow-logo-light);
+        margin-bottom: 10px;
+      }
+
+      > .StockTransferConfirmTable {
+        overflow: auto;
+        max-height: 261px;
+        > table {
+          width: 100%;
+          border-radius: 4px;
+          tr {
+            text-align: center;
+            > th,
+            > td {
+              height: 26px;
+              border: 1px solid $color-dark__separator;
+            }
+
+            > th {
+              background-color: rgba(
+                $color: var(--color-dark__title-module),
+                $alpha: 0.5
+              );
+              color: $color-gray-4;
+            }
+          }
+        }
+      }
+    }
+  }
+}

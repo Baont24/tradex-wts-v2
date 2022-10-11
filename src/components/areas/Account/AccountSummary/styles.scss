@@ -1,0 +1,25 @@
+@import 'styles/variables.scss';
+
+.AccountSummary {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  > .SheetData {
+    height: auto;
+    width: auto;
+    .ag-react-container {
+      display: flex;
+    }
+
+    .AccountCell {
+      text-align: left !important;
+    }
+
+    .ag-floating-bottom {
+      .AccountCell {
+        text-align: center !important;
+      }
+    }
+  }
+}

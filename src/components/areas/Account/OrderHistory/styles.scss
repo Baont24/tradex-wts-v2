@@ -1,0 +1,102 @@
+@import 'styles/variables.scss';
+
+.OrderHistory {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  .TabTable {
+    border: none !important;
+    background-color: unset !important;
+    > .NavTab {
+      border: 1px solid $color-dark__separator;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+    }
+    > .TabContent {
+      > div {
+        height: 100%;
+      }
+    }
+    .ag-root {
+      border-radius: 0 0 4px 4px;
+    }
+    .OrderHistoryTab {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .OrderHistoryFilter {
+        display: flex;
+        padding: 10px;
+        border: 1px solid $color-dark__separator;
+        background-color: var(--color-dark__bg-module);
+        border-bottom: none;
+        border-top: none;
+        > div {
+          margin-right: 30px;
+          display: flex;
+          align-items: center;
+          height: 24px;
+          p {
+            width: max-content;
+            margin: 0;
+            margin-right: 5px;
+          }
+        }
+        .OrderHistoryAccount {
+          p {
+            width: 110px;
+          }
+          width: 200px;
+          .AccountDropdown {
+            height: 24px;
+          }
+        }
+        .OrderHistoryStockSymbol {
+          width: 200px;
+          p {
+            width: 80px;
+          }
+          .OrderHistorySymbolPicker {
+            width: 125px;
+            color: $color-white;
+          }
+        }
+        .OrderHistoryDropdown {
+          > .Dropdown {
+            width: 100px;
+          }
+          ::-webkit-scrollbar-track {
+            background: $color-dark__background;
+          }
+          .DropdownMenu {
+            max-height: 300px;
+            overflow: auto;
+            width: fit-content;
+          }
+        }
+        .OrderHistoryDate {
+          width: auto;
+        }
+      }
+      > .OrderHistoryTable {
+        flex: 1;
+        height: 95%;
+        margin-bottom: 10px;
+      }
+      > .OrderHistoryFooter {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        > .Note {
+          display: flex;
+          align-items: center;
+          > .ErrorIcon {
+            margin: 0 5px;
+            color: $color-dark__red;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

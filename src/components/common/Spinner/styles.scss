@@ -1,0 +1,18 @@
+@import 'styles/variables.scss';
+
+.Spinner {
+  position: relative;
+  > .Spinning {
+    border-color: var(--color-yellow-logo);
+    border-right-color: transparent;
+  }
+  > .Logo {
+    position: absolute;
+    top: 0;
+    > img {
+      padding: 20%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

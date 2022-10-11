@@ -1,0 +1,761 @@
+@import 'styles/variables.scss';
+
+.ConfirmDebtModal {
+  .ModalBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    width: 270px;
+  }
+
+  .Buttons {
+    display: flex;
+    width: 100%;
+    margin-top: 25px;
+
+    > .SubmitButton {
+      background-color: var(--color-yellow-logo-light);
+      margin-right: 10px;
+      width: 100%;
+      padding: 5px;
+      text-align: center;
+      border-radius: 3px;
+    }
+    > .CancelButton {
+      background: var(--color-dark__title-module);
+      border: 1px solid $color-dark__separator;
+      color: $color-gray-4;
+      width: 100%;
+      padding: 5px;
+      border-radius: 3px;
+    }
+  }
+
+  .Title {
+    font-size: 1.4rem !important;
+    color: var(--color-yellow-logo-light);
+    margin-bottom: 30px;
+    height: 15px;
+  }
+}
+.CashInformation {
+  position: absolute;
+  top: 0;
+  right: 305px;
+  z-index: 99;
+
+  &.TypeNotMargin {
+    right: 15px;
+  }
+
+  .TableCashInformation {
+    border-radius: 5px;
+    background-color: var(--color-dark__title-module);
+    border: 1px solid $color-dark__separator;
+    overflow: hidden;
+    width: 320px;
+    table {
+      width: 100%;
+      tr td {
+        width: 50%;
+        white-space: nowrap;
+      }
+      thead {
+        position: relative;
+        .Row {
+          display: flex;
+          justify-content: space-between;
+
+          .FaDown {
+            &.Active {
+              transform: rotate(180deg);
+            }
+            position: absolute;
+            top: 5px;
+            right: 0;
+
+            cursor: pointer;
+            padding: 2px;
+            margin-right: 5px;
+            border-radius: 3px;
+            background-color: var(--color-dark__bg-module);
+          }
+        }
+        th {
+          font-weight: 800;
+          padding: 8px 0px 5px 12px;
+          color: var(--color-yellow-logo-light);
+        }
+      }
+      tbody {
+        background-color: var(--color-dark__bg-module);
+        tr td {
+          padding: 4px 6px;
+          border-top: 1px solid $color-gray-2;
+        }
+        tr td:last-child {
+          text-align: end;
+          border-left: 1px solid $color-gray-2;
+        }
+      }
+    }
+  }
+}
+.MarginInformation {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  z-index: 99;
+
+  .TableMarginInformation {
+    border-radius: 5px;
+    background-color: var(--color-dark__title-module);
+    border: 1px solid $color-dark__separator;
+    overflow: hidden;
+    width: 285px;
+    table {
+      width: 100%;
+      tr td {
+        width: 50%;
+        white-space: nowrap;
+      }
+      thead {
+        position: relative;
+        .Row {
+          display: flex;
+          justify-content: space-between;
+
+          .FaDown {
+            &.Active {
+              transform: rotate(180deg);
+            }
+            position: absolute;
+            top: 5px;
+            right: 0;
+
+            cursor: pointer;
+            padding: 2px;
+            margin-right: 5px;
+            border-radius: 3px;
+            background-color: var(--color-dark__bg-module);
+          }
+        }
+        th {
+          font-weight: 800;
+          padding: 8px 0px 5px 12px;
+          color: var(--color-yellow-logo-light);
+        }
+      }
+      tbody {
+        background-color: var(--color-dark__bg-module);
+        tr td {
+          padding: 4px 6px;
+          border-top: 1px solid $color-gray-2;
+        }
+        tr td:last-child {
+          text-align: end;
+          border-left: 1px solid $color-gray-2;
+        }
+      }
+    }
+  }
+}
+
+.OrderForm {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 10px;
+  grid-column-gap: 10px;
+
+  > .MarginInformationVertical {
+    grid-column: 1/3;
+    margin-left: 15px;
+    margin-bottom: 10px;
+
+    .TableMarginInformationVertical {
+      border-radius: 5px;
+      background-color: var(--color-dark__title-module);
+      border: 1px solid $color-dark__separator;
+      overflow: hidden;
+      width: 390px;
+      table {
+        width: 100%;
+        tr td {
+          width: 50%;
+          white-space: nowrap;
+        }
+        thead {
+          position: relative;
+          .Row {
+            display: flex;
+            justify-content: space-between;
+
+            .FaDown {
+              &.Active {
+                transform: rotate(180deg);
+              }
+              position: absolute;
+              top: 5px;
+              right: 0;
+
+              cursor: pointer;
+              padding: 2px;
+              margin-right: 5px;
+              border-radius: 3px;
+              background-color: var(--color-dark__bg-module);
+            }
+          }
+          th {
+            font-weight: 800;
+            padding: 8px 0px 5px 12px;
+            color: var(--color-yellow-logo-light);
+          }
+        }
+        tbody {
+          background-color: var(--color-dark__bg-module);
+          tr td {
+            padding: 4px 6px;
+            border-top: 1px solid $color-gray-2;
+          }
+          tr td:last-child {
+            text-align: end;
+            border-left: 1px solid $color-gray-2;
+          }
+        }
+      }
+    }
+  }
+
+  > .CashInformationVertical {
+    grid-column: 1/3;
+    margin-bottom: 10px;
+
+    .TableCashInformationVertical {
+      border-radius: 5px;
+      background-color: var(--color-dark__title-module);
+      border: 1px solid $color-dark__separator;
+      overflow: hidden;
+      width: 390px;
+      table {
+        width: 100%;
+        tr td {
+          width: 50%;
+          white-space: nowrap;
+        }
+        thead {
+          position: relative;
+          .Row {
+            display: flex;
+            justify-content: space-between;
+
+            .FaDown {
+              &.Active {
+                transform: rotate(180deg);
+              }
+              position: absolute;
+              top: 5px;
+              right: 0;
+
+              cursor: pointer;
+              padding: 2px;
+              margin-right: 5px;
+              border-radius: 3px;
+              background-color: var(--color-dark__bg-module);
+            }
+          }
+          th {
+            font-weight: 800;
+            padding: 8px 0px 5px 12px;
+            color: var(--color-yellow-logo-light);
+          }
+        }
+        tbody {
+          background-color: var(--color-dark__bg-module);
+          tr td {
+            padding: 4px 6px;
+            border-top: 1px solid $color-gray-2;
+          }
+          tr td:last-child {
+            text-align: end;
+            border-left: 1px solid $color-gray-2;
+          }
+        }
+      }
+    }
+  }
+
+  .DatePicker {
+    z-index: 9;
+  }
+  > .DisabledSection {
+    z-index: 4;
+    position: absolute;
+    width: calc(100% + 320px);
+    height: calc(100%);
+    background-color: $color-white;
+    opacity: 0.3;
+    cursor: not-allowed;
+    top: 0px;
+    left: -10px;
+  }
+
+  .FormField {
+    flex: 100%;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    &.HiddenField {
+      display: none;
+    }
+    &.BuySellSection {
+      position: relative;
+      height: 20px;
+      display: flex;
+      justify-content: space-between;
+      order: -1;
+      > .BuySellButton {
+        display: flex;
+        height: 100%;
+        > .BuyButton,
+        > .SellButton {
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          background-color: var(--color-dark__title-module);
+          width: 100px;
+          margin-right: 5px;
+          cursor: pointer;
+        }
+        .BuyButton {
+          justify-content: flex-start;
+          border-radius: 4px 0px 0px 4px;
+          &.Active {
+            background-color: $color-dark__green-button;
+          }
+        }
+        .SellButton {
+          justify-content: flex-end;
+          border-radius: 0px 4px 4px 0px;
+          &.Active {
+            background-color: $color-dark__red-button;
+          }
+        }
+      }
+      > .SideButton {
+        display: flex;
+        height: 100%;
+        > div {
+          width: 20px;
+          color: $color-gray-4;
+          cursor: pointer;
+          background: $color-dark__separator;
+          border-radius: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 5px;
+        }
+        > .SettingButton {
+          position: relative;
+        }
+        > .HelpButton {
+          position: relative;
+        }
+      }
+      #PopoverOrderFormSetting {
+        position: relative;
+        width: 275px;
+        padding: 10px;
+        > .PopoverTitle {
+          position: relative;
+        }
+        > .PopoverContent {
+          display: flex;
+        }
+      }
+    }
+    &.AccountSection {
+      > .MainField {
+        > .FieldInput {
+          &.Vertical {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            > .PP {
+              color: #b1b8ce;
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      position: relative;
+      > .AccountDropdown {
+        height: 24px;
+      }
+    }
+    &.SymbolSection {
+      .CurrentPriceField {
+        > span {
+          flex-direction: row;
+          margin-right: 10px !important;
+          .PriceTitle {
+            margin-right: 5px;
+          }
+        }
+      }
+      .FieldInfo {
+        &.Ratio {
+          color: #b1b8ce;
+        }
+      }
+      &.Vertical {
+        > .MainField {
+          .SearchSymbol {
+            > .Select {
+              > .Select-control {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.QuantitySection {
+      .FieldInfo {
+        &.Ratio {
+          color: #b1b8ce;
+        }
+      }
+    }
+    &.PriceSection,
+    &.OrderTypeSection,
+    &.SkipSection {
+      white-space: nowrap;
+    }
+    &.TradingValueSection,
+    &.ExpiryDateSection,
+    &.StopDateSection,
+    &.StopPriceSection,
+    &.LimitPriceSection,
+    &.ConditionalSection,
+    &.TriggerPriceSection,
+    &.TolerSection,
+    &.StopTimeSection {
+      position: relative;
+    }
+    &.PositionSection {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    &.ConfirmSection {
+      &.Vertical {
+        order: 100;
+      }
+      .ToggleSwitch > span.Label {
+        color: $color-white;
+      }
+    }
+
+    > .MainField {
+      .SearchSymbol {
+        > .Select {
+          > .Select-control {
+            height: 24px;
+            border: 1px solid;
+            > .Select-multi-value-wrapper {
+              height: 24px;
+              color: $color-white;
+              > .Select-placeholder {
+                color: $color-gray-4;
+              }
+              .Select-input {
+                height: 24px;
+                max-width: 100px;
+                > input {
+                  height: 24px;
+                }
+              }
+            }
+          }
+          > .Select-menu-outer {
+            left: unset;
+            right: 0;
+          }
+        }
+      }
+      > .FieldTitle {
+        margin-bottom: 5px;
+        color: $color-white;
+        display: flex;
+        > .Title {
+          flex: 1;
+          &:first-child {
+            margin-right: 10px;
+          }
+        }
+      }
+
+      > .FieldInput {
+        height: 24px;
+        margin-bottom: 5px;
+        display: flex;
+        > div {
+          flex: 1;
+          &.ToggleSwitch,
+          &.CheckBox {
+            margin-right: 10px;
+          }
+          &.SubmitButton {
+            > button {
+              border-radius: 4px;
+              text-transform: uppercase;
+              color: $color-white;
+              width: 100%;
+              height: 100%;
+              &.BuySubmitButton {
+                background-color: $color-dark__green-button;
+              }
+              &.SellSubmitButton {
+                background-color: $color-dark__red-button;
+              }
+              &[disabled] {
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    > .FieldInfo {
+      color: $color-gray-4;
+      margin-bottom: 5px;
+      font-style: italic;
+    }
+
+    > .FieldError {
+      color: $color-light__red;
+      display: block;
+    }
+  }
+
+  > .FormFieldContainer {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid $color-dark__separator;
+    position: relative;
+    margin: 5px 0 10px 0;
+    flex: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    > .FieldTitle {
+      position: absolute;
+      top: -1rem;
+      background: var(--color-dark__bg-module);
+      left: 5px;
+      padding: 0 3px;
+      color: $color-white;
+    }
+
+    > .FormField {
+      margin-bottom: 0;
+    }
+  }
+
+  &.HorizontalForm {
+    &.NormalOrder {
+      max-width: 500px;
+    }
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, auto);
+    max-width: 1020px;
+    height: auto;
+    .FormFieldContainer {
+      margin: 0 5px;
+    }
+    .FormFieldContainer:first-child {
+      margin: 0 0 5px 0;
+    }
+    .FormField {
+      margin-bottom: 5px;
+      &:not(:first-child),
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      &.BuySellSection {
+        margin-bottom: 10px;
+        margin-right: 0;
+        .CurrentPriceField {
+          > span {
+            flex-direction: row;
+            margin-right: 10px !important;
+            .PriceTitle {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+
+      &.StopDateSection {
+        > .MainField {
+          > .FieldInput {
+            width: auto !important;
+          }
+          .DateRangePicker {
+            > .DatePicker:not(.Right) {
+              margin-right: 15px;
+            }
+          }
+          .DatePicker,
+          .DatePicker.Right {
+            width: 108px;
+          }
+        }
+      }
+
+      &.ExpiryDateSection {
+        > .MainField {
+          float: right;
+          > .FieldInput {
+            width: auto !important;
+          }
+        }
+        .react-datepicker-wrapper {
+          width: 108px;
+        }
+      }
+
+      &.QuantitySection {
+        > .MainField {
+          > .FieldInput {
+            width: auto;
+            .NumericInput {
+              .react-numeric-input {
+                width: 108px;
+              }
+            }
+          }
+        }
+      }
+
+      &.ConfirmSection {
+        flex: 1 0 auto;
+        display: flex;
+        margin-right: 0;
+        > .MainField {
+          align-items: baseline;
+          .FieldInput {
+            width: auto;
+            > .ToggleSwitch {
+              .Label {
+                width: 70px;
+              }
+            }
+            > .SubmitButton {
+              .BuySubmitButton,
+              .SellSubmitButton {
+                width: 65px;
+              }
+            }
+          }
+        }
+        &.DerivativesField {
+          .FieldInput {
+            flex-direction: row;
+            > .ToggleSwitch {
+              margin-bottom: 0;
+            }
+            > .SubmitButton {
+              height: 24px;
+              .BuySubmitButton,
+              .SellSubmitButton {
+                width: 65px;
+              }
+            }
+          }
+        }
+      }
+
+      > .MainField {
+        width: auto;
+        display: flex;
+        align-items: center;
+        > .FieldTitle {
+          margin-right: 5px;
+          white-space: nowrap;
+          margin-bottom: 0;
+        }
+        > .FieldInput {
+          margin-bottom: 0;
+          width: 108px;
+          .QuantityList {
+            height: 100px;
+            overflow-y: auto;
+          }
+          &.HeightQuantityList {
+            .QuantityList {
+              height: 74px;
+            }
+          }
+        }
+      }
+
+      > .FieldError {
+        width: 185px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      > .FieldInfo {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .SymbolSection {
+    > .MainField > .FieldInput {
+      width: 100% !important;
+    }
+  }
+  .SymbolSection {
+    > .MainField > .FieldInput {
+      ::-webkit-scrollbar {
+        width: 6px !important;
+        height: 4px !important;
+      }
+    }
+  }
+}
+
+.OtpModal {
+  .ConfirmTable {
+    padding: 10px 10px 0 10px;
+    > .Title {
+      font-size: 1.4rem !important;
+      color: var(--color-yellow-logo-light);
+      margin-bottom: 20px;
+      margin-bottom: 15px;
+    }
+
+    > table {
+      width: 100%;
+      > tbody {
+        > tr {
+          > td {
+            height: 24px;
+            &:last-child {
+              color: $color-gray-3;
+            }
+          }
+        }
+      }
+    }
+  }
+}

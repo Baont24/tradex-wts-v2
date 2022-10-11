@@ -1,0 +1,72 @@
+@import 'styles/variables.scss';
+
+.Information {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  > .InformationContent {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    flex: 1;
+    > .InformationTitle {
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      > .Title {
+        color: var(--color-yellow-logo-light);
+        font-size: 1.4rem !important;
+        padding-left: 10px;
+        height: 24px;
+        line-height: 24px;
+        position: relative;
+        font-family: $font-roboto-bold;
+        &::before {
+          content: '';
+          height: 100%;
+          width: 3px;
+          background-color: var(--color-yellow-logo-light);
+          position: absolute;
+          left: 0;
+          border-radius: 0px 3px 3px 0px;
+        }
+      }
+
+      > .RightMenu {
+        display: flex;
+        align-items: center;
+        > .MenuItem {
+          padding: 0 10px;
+          text-align: center;
+          border-right: 1px solid $color-dark__separator;
+          &:last-child {
+            display: flex;
+            border-right: none;
+            > a {
+              color: var(--color-yellow-logo-light);
+              > svg {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    > .InformationData {
+      padding: 0 10px 10px 10px;
+      display: flex;
+      flex: 1;
+
+      .TabTable {
+        border: 1px solid $color-dark__separator;
+        background-color: var(--color-dark__bg-module);
+
+        > .NavTab {
+          height: 30px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import 'styles/variables.scss';
+
+.NumericInput {
+  height: 100%;
+  width: 100%;
+  &.Error {
+    > .react-numeric-input {
+      > input {
+        border-color: $color-dark__red !important;
+      }
+    }
+  }
+
+  &.HideButton {
+    > .react-numeric-input {
+      > input {
+        padding-right: 4px !important;
+      }
+      b {
+        display: none;
+      }
+    }
+  }
+
+  > .react-numeric-input {
+    width: 100%;
+    height: 100%;
+    > input {
+      width: 100%;
+      height: 100%;
+      background: $color-dark__background;
+      border: 1px solid $color-dark__separator !important;
+      border-radius: 4px !important;
+      color: $color-white;
+      outline: none;
+      text-align: right;
+      &[disabled],
+      &[readonly] {
+        opacity: 0.5;
+      }
+    }
+    b {
+      box-shadow: none !important;
+      background-color: var(--color-dark__title-module) !important;
+      border: none !important;
+      cursor: pointer !important;
+      i {
+        left: 60% !important;
+        top: 25% !important;
+        border-width: unset !important;
+        border-color: transparent transparent $color-light__gray !important;
+      }
+      &:last-child {
+        margin-top: 1px;
+        i {
+          top: 50% !important;
+          border-color: $color-light__gray transparent transparent !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import 'styles/variables.scss';
+
+.Notification {
+  display: block;
+  > .Title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    span:first-child {
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      > .LogoSuccess {
+        color: $color-light__green;
+      }
+      > .LogoInfo {
+        color: var(--color-blue-2);
+      }
+      > .LogoWarning {
+        color: $color-light__yellow;
+      }
+      > .LogoError {
+        color: $color-light__red;
+      }
+      > .LogoDefault {
+        color: $color-light__gray;
+      }
+    }
+  }
+}

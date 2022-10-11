@@ -1,0 +1,56 @@
+@import 'styles/variables.scss';
+
+.TabAssetInforEquity {
+  .TableSummary {
+    border-radius: 5px;
+    background-color: var(--color-dark__title-module);
+    border: 1px solid $color-dark__separator;
+    table {
+      width: 100%;
+      tr td {
+        width: 50%;
+      }
+      thead {
+        th {
+          font-weight: 800;
+          padding: 8px 0px 5px 12px;
+          color: var(--color-yellow-logo-light);
+        }
+      }
+      tbody {
+        background-color: var(--color-dark__bg-module);
+        tr td {
+          padding: 8px 12px;
+          border-top: 1px solid $color-gray-2;
+          &.OnBold {
+            font-weight: bold;
+          }
+        }
+        tr td:last-child {
+          text-align: end;
+          border-left: 1px solid $color-gray-2;
+        }
+      }
+    }
+    .borderRadius td {
+      border-radius: 0 0px 5px 5px;
+      height: 30px;
+    }
+  }
+}
+
+.TabAccountMini {
+  > div {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 5px 8px;
+    color: $color-gray-4;
+
+    p {
+      margin: 0;
+    }
+    p:last-child {
+      text-align: right;
+    }
+  }
+}

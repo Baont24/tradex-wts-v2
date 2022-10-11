@@ -1,0 +1,41 @@
+@import 'styles/variables.scss';
+
+.AccountInformation {
+  width: 100%;
+
+  .TabTable {
+    height: auto;
+    margin-bottom: 10px;
+
+    .TabContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .ChangePasswordForm {
+        width: 400px;
+        padding: 15px;
+        .ChangePasswordHint {
+          font-style: italic;
+        }
+        input {
+          background-color: $color-dark__background;
+          border: 1px solid var(--color-boder-input);
+          border-radius: 4px;
+          width: 100%;
+          color: $color-gray-2;
+          padding: 3px;
+        }
+        input:focus {
+          background-color: $color-dark__background;
+        }
+        .form-group:last-child {
+          float: right;
+          margin-right: 0px;
+          button {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}

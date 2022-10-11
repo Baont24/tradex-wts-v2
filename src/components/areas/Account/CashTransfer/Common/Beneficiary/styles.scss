@@ -1,0 +1,160 @@
+@import 'styles/variables.scss';
+
+.Benificiary {
+  border: 1px solid $color-dark__separator;
+  border-radius: 4px;
+
+  .BenificiaryTitle {
+    background: var(--color-dark__title-module);
+    padding: 5px;
+    border-bottom: 1px solid $color-dark__separator;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .BenificiaryContent {
+    height: 250px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    background: var(--color-dark__bg-module);
+    .BenificiaryLeft,
+    .BenificiaryRight {
+      > div {
+        height: 36px;
+        // margin-bottom: 10px;s
+        display: flex;
+        align-items: center;
+        p {
+          margin: 0;
+        }
+        p:first-child {
+          width: 130px;
+        }
+        p:nth-child(2) {
+          color: $color-gray-3;
+        }
+      }
+
+      .BenificiaryBank {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        > div {
+          display: flex;
+          .DropdownMenu {
+            max-height: 27vh;
+            overflow: auto;
+          }
+
+          .BenificiaryBankName {
+            width: 40px;
+            color: $color-white !important;
+          }
+          .BenificiaryBranch {
+            padding-left: 15px;
+            width: 80px;
+            color: $color-white !important;
+          }
+          > div {
+            width: 100%;
+          }
+        }
+        p {
+          margin: 0;
+          color: $color-dark__red !important;
+        }
+      }
+
+      .BenificiaryDropdown {
+        height: 26px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+      }
+
+      textarea {
+        width: 100%;
+        resize: none;
+        background: $color-dark__background;
+        border-radius: 5px;
+        border: 1px solid $color-dark__separator;
+        color: $color-white;
+        padding-left: 5px;
+        &:focus {
+          outline: none;
+        }
+      }
+      .BenificiaryTransferFee {
+        margin-right: 30px;
+      }
+
+      .BenificiaryFeeNote {
+        color: $color-dark__red-button;
+      }
+
+      .BenificiaryNote {
+        width: 100% !important;
+      }
+
+      .BenificiaryInput {
+        width: 100%;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        > div {
+          height: auto;
+          color: $color-gray-3;
+          border: none;
+        }
+        p {
+          margin: 0;
+          color: $color-dark__red !important;
+        }
+        .NumericInput.Error > .react-numeric-input > input {
+          border-color: $color-dark__separator !important;
+        }
+      }
+
+      .BenificiaryButton {
+        display: flex;
+        margin-top: 10px;
+        float: right;
+        height: 30px;
+        button {
+          height: 100%;
+          padding: 0 10px;
+          font-weight: bold;
+        }
+        button:first-child {
+          margin-right: 10px;
+        }
+      }
+    }
+    .BenificiaryLeft {
+      padding-right: 15px;
+      p.text-warning {
+        color: $color-dark__red !important;
+      }
+    }
+  }
+}
+
+.CashTransferModal {
+  padding: 10px 15px;
+  .CashTransferModalTitle {
+    color: var(--color-yellow-logo-light);
+  }
+  > div {
+    width: 100%;
+    display: flex;
+    p:first-child {
+      width: 100px;
+    }
+  }
+}
+.ModalButton {
+  float: right;
+  margin: 0px 8px 8px 0px;
+}

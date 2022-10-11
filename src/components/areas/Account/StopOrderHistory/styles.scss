@@ -1,0 +1,120 @@
+@import 'styles/variables.scss';
+
+.StopOrderHistory {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  .TabTable {
+    border: none !important;
+    background-color: unset !important;
+    > .NavTab {
+      border: 1px solid $color-dark__separator;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+    }
+    > .TabContent {
+      > div {
+        height: 100%;
+      }
+    }
+    .ag-root {
+      border-radius: 0 0 4px 4px;
+    }
+    .StopOrderHistoryTab {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .StopOrderHistoryFilter {
+        display: flex;
+        padding: 10px;
+        border: 1px solid $color-dark__separator;
+        background-color: var(--color-dark__bg-module);
+        border-bottom: none;
+        border-top: none;
+        > div {
+          margin-right: 30px;
+          display: flex;
+          align-items: center;
+          height: 24px;
+          p {
+            width: max-content;
+            margin: 0;
+            margin-right: 5px;
+          }
+        }
+        .StopOrderHistoryAccount {
+          p {
+            width: 110px;
+          }
+          width: 200px;
+          .AccountDropdown {
+            height: 24px;
+          }
+        }
+        .StopOrderHistoryStockSymbol {
+          width: 200px;
+          p {
+            width: 80px;
+          }
+          .StopOrderHistorySymbolPicker {
+            width: 125px;
+            color: $color-white;
+          }
+        }
+        .StopOrderHistoryDropdown {
+          > .Dropdown {
+            width: 100px;
+          }
+          ::-webkit-scrollbar-track {
+            background: $color-dark__background;
+          }
+          .DropdownMenu {
+            max-height: 300px;
+            overflow: auto;
+          }
+        }
+        .StopOrderHistoryDate {
+          width: auto;
+        }
+      }
+      > .StopOrderHistoryTable {
+        flex: 1;
+        height: 95%;
+        margin-bottom: 10px;
+
+        .ag-header-select-all.ag-labeled.ag-label-align-right.ag-checkbox {
+          margin-right: 0;
+        }
+        .ag-header-cell.Header {
+          display: grid;
+        }
+      }
+      > .StopOrderHistoryFooter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        > .Note {
+          display: flex;
+          align-items: center;
+          > .ErrorIcon {
+            margin: 0 5px;
+            color: $color-dark__red;
+            cursor: pointer;
+          }
+        }
+        > .CancelButton {
+          width: 90px;
+          height: 24px;
+          border-radius: 3px;
+          background-color: var(--color-yellow-logo-light);
+          color: $color-black;
+          &[disabled] {
+            color: $color-gray-4;
+            background-color: var(--color-dark__title-module);
+            border: 1px solid $color-dark__separator;
+          }
+        }
+      }
+    }
+  }
+}

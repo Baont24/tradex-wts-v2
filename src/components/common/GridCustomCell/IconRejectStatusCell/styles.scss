@@ -1,0 +1,19 @@
+@import 'styles/variables.scss';
+
+.IconRejectStatusCell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  > .ErrorIcon {
+    color: $color-dark__red;
+    cursor: pointer;
+  }
+}
+
+#IconRejectStatusTooltip {
+  .tooltip-inner {
+    background-color: $color-white;
+    font-size: 1.2rem !important;
+    color: $color-black;
+  }
+}

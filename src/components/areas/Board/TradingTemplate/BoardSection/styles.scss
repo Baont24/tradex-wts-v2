@@ -1,0 +1,116 @@
+@import 'styles/variables.scss';
+
+.TradingTemplate {
+  .BoardSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    > .TabTable {
+      flex: 1;
+    }
+
+    .PriceBoardTT {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      > .Filter {
+        height: 45px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+
+        > .SymbolSearchTitle {
+          color: $color-gray-4;
+          margin-right: 5px;
+        }
+
+        > .BoardSymbolSearch {
+          width: 115px;
+          margin-right: 10px;
+        }
+
+        > .WatchlistDropdown {
+          width: 120px;
+        }
+
+        > .BoardDropdown {
+          width: 120px;
+          margin-right: 10px;
+          .Active {
+            background-color: var(--color-yellow-logo-light) !important;
+          }
+          .DropdownToggle {
+            color: $color-white;
+          }
+
+          .show > .btn-primary.dropdown-toggle {
+            background-color: var(--color-yellow-logo-light) !important;
+          }
+
+          .DropdownMenu.dropdown-menu.show {
+            max-height: 50vh;
+            overflow-y: auto;
+          }
+          &.SubD {
+            .DropdownMenu.dropdown-menu.show {
+              max-height: 20vh;
+              overflow-y: auto;
+            }
+          }
+        }
+      }
+    }
+
+    .DerivativesChartContainer {
+      margin-top: 10px;
+      flex: 1;
+      .DerivativesChart {
+        border: 1px solid $color-dark__separator;
+        border-radius: 5px;
+        position: relative;
+        height: 100%;
+        > div {
+          position: absolute;
+          border-radius: 5px;
+          height: 100%;
+          width: 100%;
+        }
+        .FuturesChart {
+          position: relative;
+        }
+      }
+    }
+
+    .IndexNavTab {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 5px;
+      > span {
+        margin-left: 5px;
+        line-height: 1;
+        text-align: left;
+        flex: 1;
+        > .IndexChange {
+          white-space: nowrap;
+        }
+        > div {
+          text-align: center;
+        }
+      }
+    }
+
+    .IndexSection {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      > span {
+        margin-right: 5px;
+      }
+    }
+  }
+}

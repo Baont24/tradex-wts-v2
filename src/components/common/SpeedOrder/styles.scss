@@ -1,0 +1,421 @@
+@import 'styles/variables.scss';
+
+$color-speed-order-disabled-cell: #333642;
+$color-speed-order-price-cell-odd: var(--color-dark__bg-module);
+$color-speed-order-price-cell-even: $color-dark__line-sole-data-2;
+$color-speed-order-buy-cell-odd: linear-gradient(
+  0deg,
+  rgba(0, 252, 125, 0.55),
+  rgba(0, 252, 125, 0.55)
+);
+$color-speed-order-buy-cell-even: linear-gradient(
+  0deg,
+  rgba(0, 252, 125, 0.5),
+  rgba(0, 252, 125, 0.5)
+);
+$color-speed-order-stop-buy-cell-odd: linear-gradient(
+  0deg,
+  rgba(10, 181, 95, 0.55),
+  rgba(10, 181, 95, 0.55)
+);
+$color-speed-order-stop-buy-cell-even: linear-gradient(
+  0deg,
+  rgba(10, 181, 95, 0.5),
+  rgba(10, 181, 95, 0.5)
+);
+$color-speed-order-sell-cell-odd: linear-gradient(
+  0deg,
+  rgba(235, 55, 52, 0.6),
+  rgba(235, 55, 52, 0.6)
+);
+$color-speed-order-sell-cell-even: linear-gradient(
+  0deg,
+  rgba(235, 55, 52, 0.65),
+  rgba(235, 55, 52, 0.65)
+);
+$color-speed-order-stop-sell-cell-odd: linear-gradient(
+  0deg,
+  rgba(171, 23, 21, 0.5),
+  rgba(171, 23, 21, 0.5)
+);
+$color-speed-order-stop-sell-cell-even: linear-gradient(
+  0deg,
+  rgba(171, 23, 21, 0.55),
+  rgba(171, 23, 21, 0.55)
+);
+
+.ConfirmDebtModal {
+  .ModalBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    width: 270px;
+  }
+
+  .Buttons {
+    display: flex;
+    width: 100%;
+    margin-top: 25px;
+
+    > .SubmitButton {
+      background-color: var(--color-yellow-logo-light);
+      margin-right: 10px;
+      width: 100%;
+      padding: 5px;
+      text-align: center;
+      border-radius: 3px;
+    }
+    > .CancelButton {
+      background: var(--color-dark__title-module);
+      border: 1px solid $color-dark__separator;
+      color: $color-gray-4;
+      width: 100%;
+      padding: 5px;
+      border-radius: 3px;
+    }
+  }
+
+  .Title {
+    font-size: 1.4rem !important;
+    color: var(--color-yellow-logo-light);
+    margin-bottom: 30px;
+    height: 15px;
+  }
+}
+
+.SpeedOrder {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  > .DisabledSpeedOrder {
+    background-color: #fff;
+    position: absolute;
+    opacity: 0.3;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    cursor: not-allowed;
+    z-index: 9;
+  }
+
+  > .SettingSection {
+    display: flex;
+    height: 26px;
+    margin: 10px;
+
+    > .SearchSymbol {
+      width: 104px;
+      border: 1px solid $color-dark__separator;
+      border-radius: 4px;
+      margin-right: 15px;
+      ::-webkit-scrollbar {
+        width: 6px !important;
+        height: 4px !important;
+      }
+    }
+
+    > .ToggleSwitch {
+      flex: 1;
+    }
+  }
+
+  > .InputSection {
+    display: flex;
+    justify-content: center;
+    height: 26px;
+    margin: 10px;
+    margin-top: 0;
+
+    > .QuantitySection {
+      width: 104px;
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      > .QuantityInput {
+        margin-left: 10px;
+      }
+    }
+
+    > .AccountSection {
+      flex: 1;
+      > .AccountDropdown {
+        border: 1px solid #404040;
+        border-radius: 4px;
+      }
+    }
+
+    > .Error {
+      display: none;
+    }
+  }
+
+  > .DataSection {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+
+    > .Header {
+      height: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      background-color: var(--color-dark__title-module);
+      align-self: stretch;
+      border-top: 1px solid $color-dark__separator;
+      border-bottom: 1px solid $color-dark__separator;
+      &.RowReverse {
+        flex-direction: row-reverse;
+      }
+      > div {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        flex: 1;
+        line-height: 1;
+        &:not(:last-child) {
+          border-right: 1px solid $color-dark__separator;
+        }
+      }
+    }
+
+    > .ContentData {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      width: 100%;
+
+      > .SpeedOrderRowData {
+        display: flex;
+        flex: 1;
+        width: 100%;
+        height: 100%;
+
+        > .AutoSizerWrapper {
+          flex: 1;
+          width: 100%;
+          height: 100%;
+
+          .ReactVirtualized__Grid {
+            overflow-y: scroll !important;
+            outline: none;
+
+            > .ReactVirtualized__Grid__innerScrollContainer {
+              > div:nth-child(2n) {
+                > .Row {
+                  > .BidQty,
+                  > .AskQty,
+                  > .Price {
+                    background: $color-speed-order-price-cell-even;
+                  }
+
+                  > .StopSellCell {
+                    background: $color-speed-order-stop-sell-cell-even;
+                  }
+
+                  > .SellCell {
+                    background: $color-speed-order-sell-cell-even;
+                  }
+
+                  > .BuyCell {
+                    background: $color-speed-order-buy-cell-even;
+                  }
+
+                  > .StopBuyCell {
+                    background: $color-speed-order-stop-buy-cell-even;
+                  }
+                }
+              }
+            }
+          }
+        }
+        ::-webkit-scrollbar {
+          width: 6px !important;
+          height: 4px !important;
+        }
+      }
+    }
+
+    .LastPrice {
+      border: 1px solid var(--color-yellow-logo-light);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .Buy,
+    .Sell,
+    .StopBuy,
+    .StopSell,
+    .BidQty,
+    .AskQty,
+    .Price {
+      display: flex;
+      flex: 1;
+      color: $color-white;
+      font-size: 1rem !important;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .Price {
+      background: $color-speed-order-price-cell-odd;
+    }
+
+    .BidQty {
+      background: $color-speed-order-price-cell-odd;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .AskQty {
+      background: $color-speed-order-price-cell-odd;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .StopSellCell {
+      background: $color-speed-order-stop-sell-cell-odd;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .SellCell {
+      background: $color-speed-order-sell-cell-odd;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .BuyCell {
+      background: $color-speed-order-buy-cell-odd;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .StopBuyCell {
+      background: $color-speed-order-stop-buy-cell-odd;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .Row,
+    .RowTop,
+    .RowBottom {
+      height: $height-row;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      font-size: 10px;
+      width: 100%;
+      &.RowReverse {
+        flex-direction: row-reverse;
+      }
+      > div {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .RowTop,
+    .RowBottom {
+      padding-right: 6px;
+      .BuyCell {
+        background: $color-speed-order-buy-cell-even;
+        border-right: 0px;
+      }
+
+      .StopBuyCell {
+        background: $color-speed-order-stop-buy-cell-even;
+      }
+    }
+
+    .RowTop {
+      border-bottom: 2px solid $color-dark__separator;
+    }
+
+    .RowBottom {
+      border-top: 2px solid $color-dark__separator;
+    }
+
+    .RowButton {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      background-color: inherit;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 1rem !important;
+    }
+
+    .Disable {
+      cursor: not-allowed;
+      background-color: $color-speed-order-disabled-cell;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .HovererCell {
+      opacity: 0.7;
+    }
+  }
+}
+
+.SpeedOrderModal {
+  .ConfirmTable {
+    padding: 10px 10px 0 10px;
+    > .Title {
+      font-size: 1.4rem !important;
+      color: var(--color-yellow-logo-light);
+      margin-bottom: 20px;
+      margin-bottom: 15px;
+    }
+
+    > table {
+      width: 100%;
+      > tbody {
+        > tr {
+          > td {
+            height: 24px;
+            &:last-child {
+              color: $color-gray-3;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@-moz-document url-prefix() {
+  .ReactVirtualized__Grid.ReactVirtualized__List {
+    scrollbar-width: none;
+  }
+}
+.MaxQttTooltip > .tooltip-inner {
+  color: $color-black;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 35px;
+  background-color: $color-white;
+}
+.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+.bs-tooltip-left .arrow::before {
+  border-left-color: $color-white;
+}

@@ -1,0 +1,59 @@
+@import 'styles/variables.scss';
+
+.InfoFunction {
+  height: calc(100vh - #{$height-navbar} - #{$height-board-footer});
+  > .SymbolPickerSection {
+    padding: 5px 5px 0 5px;
+    width: 125px;
+    color: $color-white;
+    > .SearchSymbol {
+      > .Select {
+        > .Select-control {
+          background-color: $color-dark__background;
+          height: 24px;
+          border: none;
+          border-radius: 4px;
+          > .Select-multi-value-wrapper {
+            height: 24px;
+            color: $color-white;
+            > .Select-placeholder {
+              color: $color-gray-4;
+            }
+            .Select-input {
+              height: 24px;
+              max-width: 100px;
+              > input {
+                height: 24px;
+              }
+            }
+          }
+        }
+        > .Select-menu-outer {
+          margin-left: -225px;
+        }
+      }
+      svg {
+        color: var(--color-yellow-logo-light);
+        width: 10px;
+      }
+    }
+  }
+  .CompanyName {
+    color: #bdbdbd;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    max-width: 225px;
+    margin-bottom: 5px;
+  }
+  .SummarySection {
+    .Summary {
+      height: auto !important;
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 4px;
+  }
+}

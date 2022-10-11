@@ -1,0 +1,194 @@
+@import 'styles/variables.scss';
+
+$watchlist-width: 200px;
+.BoardFilter {
+  height: $height-board-function;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  > .Left {
+    display: flex;
+    > .FilterItem {
+      margin-right: 5px;
+      > .SymbolPickerSection {
+        width: 106px;
+        > .SearchSymbol {
+          > .Select {
+            > .Select-control {
+              background-color: var(--color-dark__title-module);
+              height: 26px;
+              border-radius: 3px;
+              > .Select-multi-value-wrapper {
+                height: 26px;
+                > .Select-placeholder {
+                  color: $color-white;
+                  opacity: 0.5;
+                }
+              }
+            }
+          }
+        }
+      }
+      > .Dropdown {
+        color: $color-white;
+        .dropdown-menu {
+          max-height: 48vh;
+          overflow: auto !important;
+        }
+        > .DropdownToggle {
+          height: 26px;
+          width: auto;
+          opacity: 1;
+          background-color: var(--color-dark__title-module);
+          border-radius: 3px;
+          color: $color-white;
+          padding-left: 10px;
+          > .DropdownLogo {
+            margin-left: 15px;
+          }
+          &:hover {
+            background-color: $color-dark__hover-tab;
+          }
+        }
+
+        > .DropdownMenu {
+          background-color: var(--color-dark__title-module);
+          > .WatchlistItem {
+            color: $color-white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-height: 30px;
+            > .WatchlistForm {
+              padding: 0.5rem 0.5rem 0.5rem 1rem;
+            }
+            > .WatchlistName {
+              flex: 1;
+              max-width: $watchlist-width;
+              min-height: 30px;
+              padding: 0.5rem 0.5rem 0.5rem 1rem;
+              line-height: 3rem;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+            > .WatchlistTools {
+              visibility: hidden;
+              > .Icon {
+                margin-right: 0.5rem;
+                font-size: 1.5rem !important;
+                cursor: pointer;
+                &:hover {
+                  opacity: 0.7;
+                }
+              }
+            }
+            &:hover {
+              > .WatchlistTools {
+                visibility: visible;
+              }
+              background-color: var(--color-yellow-logo);
+            }
+          }
+          > .WatchlistItemSelected {
+            background-color: var(--color-yellow-logo);
+          }
+          .WatchlistForm {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.5rem 0.5rem 1rem;
+            > .WatchlistInput {
+              flex: 1;
+              background-color: $color-dark__background;
+              border-radius: 4px;
+              border: none;
+              height: 24px;
+              padding-left: 5px;
+              padding-right: 5px;
+              color: $color-white;
+              width: 150px;
+              &:focus {
+                box-shadow: none;
+                color: $color-white;
+                outline: none;
+              }
+            }
+            > .Icons {
+              color: $color-white;
+              margin: 0px 5px;
+              cursor: pointer;
+              display: flex;
+              > svg {
+                font-size: 1.5rem !important;
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  > .Right {
+    display: flex;
+    > .FilterItem {
+      margin-left: 5px;
+      > .Dropdown {
+        position: relative;
+        > .DropdownToggle {
+          height: 26px;
+          width: 26px;
+          opacity: 1;
+          background-color: var(--color-dark__title-module);
+          border-radius: 3px;
+          padding-right: 5px;
+          &:hover {
+            background-color: $color-dark__hover-tab;
+          }
+        }
+        > .DropdownMenu {
+          left: unset !important;
+          right: 0 !important;
+          background-color: var(--color-dark__title-module);
+          transform: none !important;
+          top: unset !important;
+          > .ColumnItem {
+            color: $color-white;
+            padding: 0.25rem 1.5rem;
+          }
+        }
+      }
+
+      > .FilterButton {
+        border-radius: 3px;
+        width: 26px;
+        height: 26px;
+        background-color: var(--color-dark__title-module);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.7;
+        }
+        &.block-ui {
+          svg {
+            animation-name: spin;
+            animation-duration: 3000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

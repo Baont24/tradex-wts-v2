@@ -1,0 +1,15 @@
+@import 'styles/variables.scss';
+
+.ScrollBar {
+  > div:first-child {
+    margin-bottom: 0 !important;
+    margin-right: 0 !important;
+  }
+  > div:last-child,
+  > div:nth-child(2) {
+    > div {
+      background-color: $color-gray-2 !important;
+      z-index: 1;
+    }
+  }
+}

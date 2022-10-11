@@ -1,0 +1,45 @@
+@import 'styles/variables.scss';
+
+.LanguageSwitcher {
+  cursor: pointer;
+  display: flex;
+  > .LanguageItem {
+    border: 2px solid transparent;
+    border-radius: 5px;
+    &.Active {
+      border-color: var(--color-yellow-logo-light);
+    }
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}
+
+#popover-lang.LanguageDropdown {
+  background-color: var(--color-dark__title-module);
+  border: 1px solid $color-dark__separator;
+  width: 110px;
+  padding: 5px 0;
+  .arrow {
+    &::after {
+      border-bottom-color: var(--color-dark__title-module);
+    }
+    &::before {
+      border-bottom-color: $color-dark__separator;
+    }
+  }
+  .LanguageItem {
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    &:hover {
+      background-color: rgba($color: var(--color-yellow-logo), $alpha: 0.4);
+    }
+    &.Active {
+      background-color: var(--color-yellow-logo);
+    }
+  }
+}

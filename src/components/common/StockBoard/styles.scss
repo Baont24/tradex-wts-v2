@@ -1,0 +1,353 @@
+@import 'styles/variables.scss';
+
+$cell-height: 26px;
+$group-header-height: 52px;
+$selected-row: #272625;
+
+.StockBoard {
+  flex: 1;
+
+  > div {
+    .ag-root {
+      border: none;
+      background-color: var(--color-dark__bg-module);
+
+      &.ag-has-focus {
+        .Cell {
+          &.ag-cell-focus {
+            background-color: rgba($color: $color-dark__teal, $alpha: 0.3);
+            border-color: $color-dark__separator;
+            border-left: none;
+            border-top: none;
+          }
+        }
+      }
+
+      .ag-header {
+        background-color: var(--color-dark__title-module);
+        border: none;
+        font-weight: unset;
+
+        .ag-header-row {
+          height: $group-header-height !important;
+
+          &:last-child {
+            margin-top: -$cell-height;
+            z-index: 2;
+          }
+
+          .Header,
+          .GroupHeader {
+            padding-left: 5px;
+            padding-right: 5px;
+            border: 1px solid $color-dark__separator;
+            background-color: var(--color-dark__title-module);
+            color: $color-white;
+            border-left: none;
+            border-top: none;
+
+            &::after {
+              display: none;
+            }
+          }
+
+          .ag-header-group-cell {
+            padding: 0;
+            justify-content: center;
+
+            .ag-react-container {
+              width: 100%;
+              height: 100%;
+              text-align: center;
+            }
+
+            .ag-header-group-cell-label {
+              justify-content: center;
+              z-index: 1;
+            }
+
+            &::after {
+              height: $group-header-height;
+              margin-top: 0;
+            }
+
+            &.GroupHeader {
+              height: $cell-height;
+              z-index: 4;
+            }
+
+            &.HasGroupHeader {
+              height: $cell-height;
+              z-index: 4;
+              border-top: none;
+              color: $color-white;
+            }
+
+            &.HasToggleGroupHeader {
+              height: $cell-height;
+              justify-content: center;
+              z-index: 3;
+              color: $color-white;
+            }
+
+            &.ShowOnlyToggleGroupHeader {
+              height: $group-header-height;
+              justify-content: center;
+              z-index: 3;
+              color: $color-white;
+              background-color: var(--color-dark__title-module);
+              border-bottom: 1px solid $color-dark__separator;
+            }
+          }
+
+          .ag-header-cell {
+            padding: 0;
+            justify-content: center;
+            cursor: ns-resize;
+
+            .ag-header-cell-label {
+              justify-content: center;
+
+              .ag-header-cell-text {
+                text-align: center;
+                white-space: normal;
+              }
+            }
+
+            .ag-react-container {
+              width: 100%;
+              height: 100%;
+              display: flex;
+            }
+
+            &::after {
+              height: $cell-height;
+              margin-top: 0;
+            }
+
+            &.NoGroupHeader {
+              display: none;
+            }
+
+            &.GroupHeader {
+              height: $cell-height;
+              margin-top: $cell-height;
+            }
+            &.HasGroupHeader {
+              height: $cell-height;
+              margin-top: $cell-height;
+              border-top: none;
+              border-bottom: 1px solid $color-dark__separator;
+              color: $color-white;
+            }
+          }
+
+          .Highlight {
+            background-color: var(--color-board-header__highlight);
+          }
+        }
+      }
+
+      .HideGroupIcon {
+        .ag-header-icon {
+          display: none;
+        }
+      }
+
+      .ag-row {
+        border: none;
+        background-color: var(--color-dark__bg-module);
+
+        &.ag-row-hover {
+          background-color: rgba(
+            $color: var(--color-dark__title-module),
+            $alpha: 0.8
+          );
+
+          .SymbolCellWatchlist {
+            justify-content: left;
+            > .ag-cell-value {
+              width: 42px;
+            }
+            > .ag-icon-cross {
+              display: inline-block !important;
+            }
+          }
+
+          .ag-row-drag {
+            opacity: 1 !important;
+          }
+        }
+
+        &.ag-row-focus {
+          background-color: rgba(
+            $color: var(--color-dark__title-module),
+            $alpha: 0.8
+          );
+        }
+
+        &.ag-full-width-row {
+          &.ag-row-hover {
+            background-color: unset;
+          }
+          > .ag-react-container {
+            height: 100%;
+          }
+        }
+
+        .ag-horizontal-left-spacer {
+          overflow: hidden;
+        }
+
+        .Cell {
+          border: 1px solid $color-dark__separator;
+          border-left: none;
+          border-top: none;
+          padding: 0 2px;
+          text-align: right;
+          height: 100%;
+
+          &.Highlight {
+            background-color: var(--color-board__highlight);
+          }
+
+          &.CustomCell {
+            padding: 0;
+          }
+
+          > .ag-react-container {
+            width: 100%;
+            text-align: right;
+
+            > div {
+              padding: 0 0px;
+            }
+          }
+
+          &.Symbols {
+            font-family: $font-roboto-bold;
+            justify-content: flex-start;
+            > .ag-cell-wrapper {
+              > .ag-cell-value {
+                width: 100%;
+              }
+            }
+          }
+
+          &.Up {
+            color: $color-dark__green !important;
+
+            &.ag-cell-data-changed {
+              background-color: $color-dark__green !important;
+            }
+          }
+
+          &.Down {
+            color: $color-dark__red !important;
+
+            &.ag-cell-data-changed {
+              background-color: $color-dark__red !important;
+              color: $color-white !important;
+            }
+          }
+
+          &.Ref {
+            color: $color-dark__yellow !important;
+
+            &.ag-cell-data-changed {
+              background-color: $color-dark__yellow !important;
+            }
+          }
+
+          &.Ceil {
+            color: $color-dark__purple !important;
+
+            &.ag-cell-data-changed {
+              background-color: $color-dark__purple !important;
+            }
+          }
+
+          &.Floor {
+            color: $color-dark__teal !important;
+
+            &.ag-cell-data-changed {
+              background-color: $color-dark__teal !important;
+            }
+          }
+
+          &.Default {
+            color: $color-white !important;
+
+            &.ag-cell-data-changed {
+              color: $color-black !important;
+              background-color: $color-white !important;
+            }
+          }
+
+          &.SmallText {
+            .ag-cell-value {
+              font-size: 1rem !important;
+            }
+          }
+
+          &.NotAvailable {
+            opacity: 0.5;
+          }
+
+          &.ag-cell-data-changed {
+            color: $color-black !important;
+            background-color: $color-white !important;
+          }
+
+          &.ag-cell-data-changed-animation {
+            transition-duration: 0s;
+          }
+        }
+        .TextAlign {
+          border: 1px solid $color-dark__separator;
+          border-left: none;
+          border-top: none;
+          padding: 0 2px;
+          text-align: center;
+        }
+      }
+
+      .ag-row-selected {
+        background: rgba($color: var(--color-dark__title-module), $alpha: 0.8);
+      }
+
+      .ag-row-drag {
+        position: absolute;
+        right: 20px;
+        height: 24px;
+        width: 24px;
+        min-width: unset;
+        z-index: 1;
+        > .ag-icon-grip::before {
+          content: none;
+        }
+      }
+
+      .ag-icon {
+        &.ag-icon-desc,
+        &.ag-icon-asc {
+          font-size: 1.6rem !important;
+        }
+      }
+
+      .ag-overlay {
+        height: calc(100% - 6px);
+        pointer-events: auto;
+        .ag-overlay-panel {
+          pointer-events: auto;
+          & .ag-overlay-loading-wrapper {
+            background-color: unset;
+          }
+        }
+        .ag-react-container {
+          padding-top: 6px;
+        }
+      }
+    }
+  }
+}

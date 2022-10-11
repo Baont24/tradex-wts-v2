@@ -1,0 +1,86 @@
+@import 'styles/variables.scss';
+.TradingTemplate {
+  .PortfolioSection {
+    position: relative;
+    > .TabTable {
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+
+      > .TabContent {
+        flex: 1;
+        display: flex;
+
+        > .tab-pane {
+          flex: 1;
+
+          > .TabBoard {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            > .PortfolioFilter {
+              padding: 10px;
+              display: flex;
+              border: 1px solid $color-dark__separator;
+              background-color: var(--color-dark__bg-module);
+              border-bottom: none;
+              border-top: none;
+              > div {
+                margin-right: 30px;
+                display: flex;
+                align-items: center;
+                height: 24px;
+                p {
+                  margin: 0;
+                  margin-right: 5px;
+                  white-space: nowrap;
+                  color: #bdbdbd;
+                }
+              }
+              > div:last-child {
+                margin-right: 0;
+              }
+              .PortfolioAccount {
+                position: relative;
+                width: 200px;
+              }
+              .PortfolioDropdown {
+                > .Dropdown {
+                  width: 100px;
+                  ::-webkit-scrollbar-track {
+                    background: $color-dark__background;
+                  }
+                  .DropdownMenu {
+                    max-height: 300px;
+                    overflow: auto;
+                  }
+                }
+              }
+            }
+            .PortfolioData {
+              flex: 1;
+              .ag-root {
+                border: none !important;
+                border-radius: 0;
+                .ag-row {
+                  .Cell {
+                    &:last-child {
+                      border-right: 1px solid $color-dark__separator;
+                    }
+                  }
+                  .alignRight {
+                    text-align: end;
+                    padding-right: 15px;
+                  }
+                  .hideBtn button {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

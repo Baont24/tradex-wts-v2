@@ -1,0 +1,71 @@
+@import 'styles/variables.scss';
+
+main {
+  > .Container {
+    display: flex;
+    height: 100%;
+    overflow: auto;
+    > .Children {
+      display: flex;
+      flex: 1;
+      overflow: auto;
+    }
+  }
+}
+
+.OtpModal {
+  background: rgba(10, 14, 21, 0.7);
+  > .OtpModalDialog {
+    justify-content: center;
+    > .modal-content {
+      background-color: var(--color-dark__bg-module);
+      border: 1px solid var(--color-dark__title-module);
+      border-radius: 5px;
+      > .ModalBody {
+        padding: 0;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.SymbolInfoModal {
+  justify-content: center;
+  @media only screen and (min-width: 1921px) {
+    max-width: 1700px;
+  }
+  @media only screen and (max-width: 1920px) {
+    max-width: 1617px;
+  }
+  @media only screen and (max-width: 1600px) {
+    max-width: 1350px;
+  }
+  @media only screen and (max-width: 1366px) {
+    max-width: 1300px;
+    > .modal-content {
+      > .ModalBody {
+        > .SymbolInfo {
+          > .InfoSection {
+            flex: 4;
+            > .BodySection {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+  > .modal-content {
+    background-color: $color-dark__separator !important;
+    border-radius: 8px !important;
+    > .ModalBody {
+      overflow: hidden;
+      padding: 0;
+      height: $height-symbol-info;
+    }
+  }
+}
+
+.modal-backdrop.show {
+  opacity: 0;
+}

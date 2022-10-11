@@ -1,0 +1,31 @@
+@import 'styles/variables.scss';
+
+.ToggleGroupHeader {
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+
+  &.Clickable {
+    cursor: ns-resize;
+  }
+
+  .icon {
+    backface-visibility: initial;
+  }
+  svg {
+    cursor: pointer;
+  }
+  > .Content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    > span {
+      white-space: break-spaces;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.DateRangePicker {
+  display: flex;
+  align-items: center;
+  > .DateTitle {
+    margin-right: 5px;
+    white-space: nowrap;
+  }
+
+  > .DatePicker {
+    &:first-child {
+      margin-right: 10px;
+    }
+    &:last-child {
+      .react-datepicker-popper {
+        left: unset !important;
+        right: 0 !important;
+        .react-datepicker__triangle {
+          left: unset !important;
+          right: 25% !important;
+        }
+      }
+    }
+  }
+}

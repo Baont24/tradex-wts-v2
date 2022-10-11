@@ -1,0 +1,71 @@
+@import 'styles/variables.scss';
+
+.TradingTemplate {
+  .OrderSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    ::-webkit-scrollbar {
+      width: 0 !important;
+      height: 0 !important;
+    }
+    > .SymbolSection {
+      height: 25px;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+
+      > .SearchSymbol {
+        width: 120px;
+        margin-right: 10px;
+        ::-webkit-scrollbar {
+          width: 6px !important;
+          height: 4px !important;
+        }
+      }
+      > .PriceSection {
+        display: flex;
+        flex: 1;
+        padding: 0 8px;
+        justify-content: space-between;
+        > span {
+          &:not(:first-child) {
+            color: $color-gray-4;
+          }
+          margin-right: 15px;
+          .Volume {
+            color: $color-white;
+          }
+        }
+        .FontUp {
+          font-size: 1.4rem !important;
+          text-align: center;
+          font-weight: bold;
+        }
+        .PriceSectionItem {
+          width: auto;
+          height: 100%;
+          margin-left: 10px;
+        }
+      }
+    }
+    > .TabsContainer {
+      display: flex;
+      height: 100%;
+      > .MatchingHistoryTabs {
+        flex: 1;
+        margin-right: 10px;
+        .QuoteInfo {
+          height: 100%;
+        }
+        ::-webkit-scrollbar {
+          width: 6px !important;
+          height: 4px !important;
+        }
+      }
+      > .OrderTabs {
+        flex: 1;
+      }
+    }
+  }
+}
